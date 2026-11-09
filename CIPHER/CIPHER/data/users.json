@@ -1,0 +1,24 @@
+[
+  {
+    "id": "usr-0142-sharma",
+    "email": "analyst.sharma@cipher.intel",
+    "name": "Arjun Sarkar",
+    "badgeNumber": "CPH-8921-ND",
+    "clearanceLevel": "LEVEL 3 - STRICT CLASSIFIED",
+    "role": "INVESTIGATOR",
+    "agencyDivision": "Special Operations Cyber Analysis Division",
+    "createdAt": "2026-01-10T08:00:00.000Z",
+    "updatedAt": "2026-09-08T18:16:33.691Z"
+  },
+  {
+    "id": "usr-0143-vance",
+    "email": "analyst.vance@cipher.intel",
+    "name": "Elena Vance",
+    "badgeNumber": "CPH-4412-CY",
+    "clearanceLevel": "LEVEL 4 - TOP SECRET",
+    "role": "ADMIN",
+    "agencyDivision": "Transnational Cyber & Telecom Forensics",
+    "createdAt": "2026-01-12T09:30:00.000Z",
+    "updatedAt": "2026-09-08T18:04:23.859Z"
+  }
+]

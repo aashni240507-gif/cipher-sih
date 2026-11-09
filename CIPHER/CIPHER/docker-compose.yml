@@ -1,0 +1,97 @@
+version: "3.8"
+
+services:
+  # ============================================================================
+  # 1. Relational Database: PostgreSQL 16
+  # ============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: cipher-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cipher_admin
+      POSTGRES_PASSWORD: cipher_secure_pass_2026
+      POSTGRES_DB: cipher_intel
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cipher_admin -d cipher_intel"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # 2. Graph Database: Neo4j 5 Community
+  # ============================================================================
+  neo4j:
+    image: neo4j:5-community
+    container_name: cipher-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/cipher_neo4j_secret_password
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_dbms_memory_heap_initial__size: "512m"
+      NEO4J_dbms_memory_heap_max__size: "1G"
+    ports:
+      - "7474:7474" # Neo4j Browser UI
+      - "7687:7687" # Bolt Protocol Port
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:7474"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  # ============================================================================
+  # 3. CIPHER Full-Stack Application Service
+  # ============================================================================
+  cipher-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cipher-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: "postgresql://cipher_admin:cipher_secure_pass_2026@postgres:5432/cipher_intel?schema=public"
+      NEO4J_URI: "bolt://neo4j:7687"
+      NEO4J_USERNAME: "neo4j"
+      NEO4J_PASSWORD: "cipher_neo4j_secret_password"
+      JWT_SECRET: "cipher-classified-investigative-auth-secret-key-2026-production"
+      SESSION_SECRET: "cipher-classified-investigative-auth-secret-key-2026-production"
+      FRONTEND_URL: "http://localhost:3000"
+      NEXT_PUBLIC_API_URL: "http://localhost:3000"
+      OLLAMA_BASE_URL: "${OLLAMA_BASE_URL:-http://host.docker.internal:11434}"
+      OLLAMA_MODEL: "${OLLAMA_MODEL:-gpt-oss:120b-cloud}"
+      ENABLE_DEMO_RESET: "true"
+    ports:
+      - "3000:3000"
+    volumes:
+      - cipher_data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/ai/status"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  cipher_data:
+    driver: local

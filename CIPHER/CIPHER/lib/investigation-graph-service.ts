@@ -1,0 +1,1622 @@
+import fs from "fs";
+import path from "path";
+import { GraphNode, GraphEdge } from "./graph-data";
+import { recordAuditEvent } from "./user-service";
+
+export interface InvestigationGraphData {
+  investigationId: string;
+  caseId: string;
+  title: string;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  lastUpdated: string;
+}
+
+const DATA_DIR = path.join(process.cwd(), "data");
+const GRAPH_STORE_FILE = path.join(DATA_DIR, "investigation-graphs.json");
+
+// 1. Initial Case-Specific Datasets
+const INITIAL_CASE_GRAPHS: Record<
+  string,
+  { caseId: string; title: string; nodes: GraphNode[]; edges: GraphEdge[] }
+> = {
+  // Case 0: Sahil Khan v. State Govt. of NCT of Delhi (FIR 4/2025 Cyber South-West)
+  "inv-004-sahil-khan": {
+    caseId: "CASE-2025-004",
+    title: "Sahil Khan v. State Govt. of NCT of Delhi (FIR 4/2025)",
+    nodes: [
+      // 1. People
+      {
+        id: "person-001",
+        label: "Sahil Khan",
+        name: "Sahil Khan (Applicant / Subject)",
+        type: "suspect",
+        x: 920,
+        y: 440,
+        risk: "HIGH",
+        details: "Applicant in Bail Appl. 3788/2025 (FIR 4/2025). Investigative connections via financial credits (>₹5L), ATM CCTV footage, Cell-ID tower records, and co-accused disclosures. Status: Court Proceedings / Anticipatory Bail Dismissed.",
+        centrality: "0.95",
+        cluster: 1,
+        status: "Anticipatory Bail Dismissed (14 Jan 2026)",
+      },
+      {
+        id: "person-002",
+        label: "Sajid Khan",
+        name: "Sajid Khan (Co-Accused)",
+        type: "suspect",
+        x: 860,
+        y: 640,
+        risk: "HIGH",
+        details: "Co-accused mentioned in investigation and disclosure statements relating to ATM cash withdrawals and syndicate coordination.",
+        centrality: "0.72",
+        cluster: 1,
+        status: "Named in Investigation Disclosures",
+      },
+      {
+        id: "person-003",
+        label: "Narendra Kumar",
+        name: "Narendra Kumar (Co-Accused)",
+        type: "suspect",
+        x: 1040,
+        y: 640,
+        risk: "HIGH",
+        details: "Co-accused identified in investigative material regarding ATM cash withdrawals and bank transactions.",
+        centrality: "0.68",
+        cluster: 1,
+        status: "Named in Co-Accused Disclosures",
+      },
+      {
+        id: "person-004",
+        label: "Sabir Khan",
+        name: "Sabir Khan (Co-Accused)",
+        type: "suspect",
+        x: 1200,
+        y: 640,
+        risk: "HIGH",
+        details: "Co-accused mentioned in investigative disclosure statements concerning regional interstate fraud network.",
+        centrality: "0.64",
+        cluster: 1,
+        status: "Investigative Subject",
+      },
+      {
+        id: "person-005",
+        label: "Victim",
+        name: "Victim (Senior Citizen Complainant)",
+        type: "person",
+        x: 120,
+        y: 280,
+        risk: "LOW",
+        details: "Senior citizen who searched online for Yahoo customer care, contacted fraudulent number, and was induced to download APK and share debit card details.",
+        centrality: "0.82",
+        cluster: 2,
+        status: "Complainant / FIR Informant",
+      },
+
+      // 2. Phones
+      {
+        id: "phone-001",
+        label: "Phone +91-9871...",
+        name: "+91-9871234001 (Sahil Khan)",
+        type: "phone",
+        x: 1080,
+        y: 380,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. Synthetic mobile associated with applicant Sahil Khan. Cell-ID handshakes logged in Jaipur and Alwar sectors.",
+        centrality: "0.84",
+        cluster: 1,
+        status: "CDR / Tower Analyzed",
+      },
+      {
+        id: "phone-002",
+        label: "Phone +91-9810...",
+        name: "+91-9810987005 (Victim)",
+        type: "phone",
+        x: 80,
+        y: 150,
+        risk: "LOW",
+        details: "DEMO_SYNTHETIC. Synthetic mobile number of complainant senior citizen; received fraudulent Yahoo customer care APK.",
+        centrality: "0.55",
+        cluster: 2,
+        status: "Device Compromised via APK",
+      },
+      {
+        id: "phone-003",
+        label: "Phone +91-9871...",
+        name: "+91-9871234002 (Sajid Khan)",
+        type: "phone",
+        x: 740,
+        y: 740,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. Synthetic mobile number of co-accused Sajid Khan.",
+        centrality: "0.58",
+        cluster: 1,
+        status: "Telecom Monitored",
+      },
+      {
+        id: "phone-004",
+        label: "Phone +91-9871...",
+        name: "+91-9871234003 (Narendra Kumar)",
+        type: "phone",
+        x: 1160,
+        y: 740,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. Synthetic mobile number of co-accused Narendra Kumar.",
+        centrality: "0.54",
+        cluster: 1,
+        status: "Telecom Monitored",
+      },
+      {
+        id: "phone-005",
+        label: "Phone +91-9871...",
+        name: "+91-9871234004 (Sabir Khan)",
+        type: "phone",
+        x: 1200,
+        y: 540,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. Synthetic mobile number of co-accused Sabir Khan.",
+        centrality: "0.51",
+        cluster: 1,
+        status: "Telecom Monitored",
+      },
+
+      // 3. Devices / IMEIs
+      {
+        id: "device-001",
+        label: "IMEI ...412001",
+        name: "Device 358921098412001 (Sahil Khan)",
+        type: "phone",
+        x: 1220,
+        y: 380,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. 15-digit IMEI of Sahil Khan handset. Correlated across tower handshakes in Rajasthan sectors.",
+        centrality: "0.76",
+        cluster: 1,
+        status: "Hardware Fingerprint Mapped",
+      },
+      {
+        id: "device-002",
+        label: "IMEI ...412002",
+        name: "Device 359124098412002 (Victim)",
+        type: "phone",
+        x: 80,
+        y: 50,
+        risk: "LOW",
+        details: "DEMO_SYNTHETIC. 15-digit IMEI of victim's smartphone targeted by fraudulent Yahoo APK installer.",
+        centrality: "0.45",
+        cluster: 2,
+        status: "Forensic Extraction Completed",
+      },
+      {
+        id: "device-003",
+        label: "IMEI ...412003",
+        name: "Device 354891098412003 (Sajid Khan)",
+        type: "phone",
+        x: 620,
+        y: 740,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. 15-digit IMEI associated with Sajid Khan handset.",
+        centrality: "0.50",
+        cluster: 1,
+        status: "Hardware Identified",
+      },
+      {
+        id: "device-004",
+        label: "IMEI ...412004",
+        name: "Device 356712098412004 (Narendra Kumar)",
+        type: "phone",
+        x: 1280,
+        y: 740,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. 15-digit IMEI associated with Narendra Kumar handset.",
+        centrality: "0.48",
+        cluster: 1,
+        status: "Hardware Identified",
+      },
+      {
+        id: "device-005",
+        label: "IMEI ...412005",
+        name: "Device 352391098412005 (Sabir Khan)",
+        type: "phone",
+        x: 1340,
+        y: 540,
+        risk: "MEDIUM",
+        details: "DEMO_SYNTHETIC. 15-digit IMEI associated with Sabir Khan handset.",
+        centrality: "0.46",
+        cluster: 1,
+        status: "Hardware Identified",
+      },
+
+      // 4. Banks & Accounts
+      {
+        id: "bank-001",
+        label: "HDFC Bank",
+        name: "HDFC Bank (Complainant's Bank)",
+        type: "org",
+        x: 120,
+        y: 440,
+        risk: "LOW",
+        details: "Financial institution holding complainant's savings and linked fixed-deposit accounts.",
+        centrality: "0.78",
+        cluster: 2,
+        status: "Verified Banking Entity",
+      },
+      {
+        id: "account-001",
+        label: "Victim Savings",
+        name: "HDFC Savings Acct XXXXXX5012",
+        type: "financial",
+        x: 260,
+        y: 280,
+        risk: "CRITICAL",
+        details: "DEMO_SYNTHETIC. Victim's primary savings account. Initial fraudulent debit of approx. ₹14 lakh siphoned via unauthorized transaction.",
+        centrality: "0.88",
+        cluster: 2,
+        status: "₹14L Compromise Point",
+      },
+      {
+        id: "account-002",
+        label: "Victim Fixed Dep",
+        name: "HDFC Linked FD XXXXXX9821",
+        type: "financial",
+        x: 260,
+        y: 440,
+        risk: "CRITICAL",
+        details: "DEMO_SYNTHETIC. Linked fixed-deposit accounts accessed and liquidated by fraudster, increasing total reported loss to approx. ₹26 lakh.",
+        centrality: "0.85",
+        cluster: 2,
+        status: "₹12L Liquidated (Total ₹26L)",
+      },
+      {
+        id: "account-003",
+        label: "Mule Acct 1 (RJ)",
+        name: "Mule Acct XXXXXX3341 (Rajasthan)",
+        type: "financial",
+        x: 440,
+        y: 240,
+        risk: "CRITICAL",
+        details: "DEMO_SYNTHETIC. Layer 1 mule account in Rajasthan receiving siphoned victim funds. Connected to Jaipur ATM withdrawals and sub-transfers.",
+        centrality: "0.89",
+        cluster: 3,
+        status: "Layer 1 Mule Node",
+      },
+      {
+        id: "account-004",
+        label: "Mule Acct 2 (BR)",
+        name: "Mule Acct XXXXXX7782 (Bihar)",
+        type: "financial",
+        x: 440,
+        y: 400,
+        risk: "CRITICAL",
+        details: "DEMO_SYNTHETIC. Layer 2 mule account in Bihar receiving liquidated FD proceeds and routing to regional ATM cash points.",
+        centrality: "0.86",
+        cluster: 3,
+        status: "Layer 2 Mule Node",
+      },
+      {
+        id: "account-005",
+        label: "Mule Acct 3 (JH)",
+        name: "Mule Acct XXXXXX6619 (Jharkhand)",
+        type: "financial",
+        x: 440,
+        y: 560,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. Layer 3 mule account operating along the interstate Jharkhand cyber-fraud corridor.",
+        centrality: "0.75",
+        cluster: 3,
+        status: "Interstate Mule Node",
+      },
+      {
+        id: "account-006",
+        label: "Sahil Khan Acct",
+        name: "Sahil Khan Bank Acct XXXXXX4408",
+        type: "financial",
+        x: 620,
+        y: 540,
+        risk: "CRITICAL",
+        details: "DEMO_SYNTHETIC. Bank account of applicant Sahil Khan. High Court order records that more than ₹5 lakh was credited during relevant period. Appeared in multiple NCRP reports.",
+        centrality: "0.96",
+        cluster: 1,
+        status: "> ₹5L Credited // NCRP Linked",
+      },
+
+      // 5. ATM Withdrawals & Locations
+      {
+        id: "atm-001",
+        label: "ATM Jaipur",
+        name: "ATM Unit - Jaipur, Rajasthan",
+        type: "location",
+        x: 740,
+        y: 180,
+        risk: "HIGH",
+        details: "ATM location in Jaipur, Rajasthan where cash withdrawals were executed. Address: NOT DISCLOSED IN COURT RECORD.",
+        centrality: "0.82",
+        cluster: 3,
+        status: "Cash Withdrawal Point",
+      },
+      {
+        id: "atm-002",
+        label: "ATM Bihar",
+        name: "ATM Unit - Bihar Corridor",
+        type: "location",
+        x: 740,
+        y: 400,
+        risk: "HIGH",
+        details: "ATM location in Bihar where second-layer mule funds were withdrawn in cash. Address: NOT DISCLOSED IN COURT RECORD.",
+        centrality: "0.78",
+        cluster: 3,
+        status: "Cash Withdrawal Point",
+      },
+      {
+        id: "withdrawal-001",
+        label: "Cash ₹2.5L (RJ)",
+        name: "Withdrawal ₹2,50,000 (Jaipur ATM)",
+        type: "financial",
+        x: 620,
+        y: 180,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. ATM cash withdrawal of ₹2,50,000 from Mule Account XXXXXX3341 at Jaipur ATM.",
+        centrality: "0.74",
+        cluster: 3,
+        status: "Cash Extraction",
+      },
+      {
+        id: "withdrawal-002",
+        label: "Cash ₹3.0L (BR)",
+        name: "Withdrawal ₹3,00,000 (Bihar ATM)",
+        type: "financial",
+        x: 620,
+        y: 400,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. ATM cash withdrawal of ₹3,00,000 from Mule Account XXXXXX7782 at Bihar ATM.",
+        centrality: "0.73",
+        cluster: 3,
+        status: "Cash Extraction",
+      },
+      {
+        id: "withdrawal-003",
+        label: "Cash ₹1.8L (RJ)",
+        name: "Withdrawal ₹1,80,000 (Jaipur ATM)",
+        type: "financial",
+        x: 620,
+        y: 280,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. Subsequent cash withdrawal of ₹1,80,000 from Mule Account XXXXXX3341.",
+        centrality: "0.70",
+        cluster: 3,
+        status: "Cash Extraction",
+      },
+
+      // 6. CCTV Evidence
+      {
+        id: "evidence-001",
+        label: "ATM CCTV Footage",
+        name: "EVIDENCE-001: ATM CCTV Footage",
+        type: "case",
+        x: 880,
+        y: 240,
+        risk: "CRITICAL",
+        details: "Court-recorded investigative material: ATM CCTV footage collected during investigation. Court record discusses identification of Sahil Khan and other individuals in CCTV relating to withdrawal of cheated amounts. Source document available.",
+        centrality: "0.93",
+        cluster: 1,
+        status: "Court-Recorded Investigative Evidence",
+      },
+
+      // 7. Telecom, Cell-ID & Locations
+      {
+        id: "cdr-001",
+        label: "CDR Sahil Khan",
+        name: "CDR-001: Sahil Khan Telecom Telemetry",
+        type: "phone",
+        x: 1080,
+        y: 240,
+        risk: "HIGH",
+        details: "DEMO_SYNTHETIC. Telecom records and tower handshakes. Note: Detailed telecom records are not publicly disclosed; synthetic values shown for prototype demonstration.",
+        centrality: "0.85",
+        cluster: 1,
+        status: "Tower Telemetry Analyzed",
+      },
+      {
+        id: "cell-001",
+        label: "CELL-001 (Jaipur)",
+        name: "CELL-001: Jaipur Tower Area",
+        type: "location",
+        x: 1220,
+        y: 180,
+        risk: "HIGH",
+        details: "Telecom-derived location / tower-area indication. Mobile tower sector in Jaipur coincides with ATM cash withdrawal timeframe.",
+        centrality: "0.80",
+        cluster: 1,
+        status: "Tower Handshake Logged",
+      },
+      {
+        id: "cell-002",
+        label: "CELL-002 (Alwar)",
+        name: "CELL-002: Alwar Tower Area",
+        type: "location",
+        x: 1220,
+        y: 280,
+        risk: "HIGH",
+        details: "Telecom-derived location / tower-area indication. Mobile tower presence logged for applicant's handset in Alwar sector.",
+        centrality: "0.77",
+        cluster: 1,
+        status: "Tower Handshake Logged",
+      },
+      {
+        id: "loc-001",
+        label: "Delhi",
+        name: "Delhi (Crime Origin / Police Station)",
+        type: "location",
+        x: 260,
+        y: 140,
+        risk: "LOW",
+        details: "Cyber South-West Police Station precinct and victim residence.",
+        centrality: "0.65",
+        cluster: 2,
+        status: "Jurisdictional Origin",
+      },
+      {
+        id: "loc-002",
+        label: "Jaipur, RJ",
+        name: "Jaipur, Rajasthan",
+        type: "location",
+        x: 1360,
+        y: 180,
+        risk: "HIGH",
+        details: "Interstate investigation hub; location of ATM cash withdrawals and cellular tower handshakes.",
+        centrality: "0.83",
+        cluster: 1,
+        status: "Active Withdrawal Zone",
+      },
+      {
+        id: "loc-003",
+        label: "Alwar, RJ",
+        name: "Alwar, Rajasthan",
+        type: "location",
+        x: 1360,
+        y: 280,
+        risk: "HIGH",
+        details: "Applicant location and cellular tower coverage sector cited in court proceedings.",
+        centrality: "0.79",
+        cluster: 1,
+        status: "Applicant Movement Sector",
+      },
+      {
+        id: "loc-004",
+        label: "Bihar",
+        name: "Bihar Corridor",
+        type: "location",
+        x: 860,
+        y: 400,
+        risk: "HIGH",
+        details: "Interstate mule account location and cash withdrawal node.",
+        centrality: "0.74",
+        cluster: 3,
+        status: "Interstate Link",
+      },
+      {
+        id: "loc-005",
+        label: "Jharkhand",
+        name: "Jharkhand Corridor",
+        type: "location",
+        x: 320,
+        y: 640,
+        risk: "HIGH",
+        details: "Interstate banking and cyber-fraud syndicate corridor.",
+        centrality: "0.71",
+        cluster: 3,
+        status: "Interstate Link",
+      },
+      {
+        id: "loc-006",
+        label: "Mewat",
+        name: "Mewat Region",
+        type: "location",
+        x: 740,
+        y: 840,
+        risk: "HIGH",
+        details: "Regional cyber-fraud operations nexus cited in ongoing investigations.",
+        centrality: "0.76",
+        cluster: 1,
+        status: "Regional Syndicate Hub",
+      },
+      {
+        id: "loc-007",
+        label: "Madhya Pradesh",
+        name: "Madhya Pradesh Corridor",
+        type: "location",
+        x: 440,
+        y: 460,
+        risk: "MEDIUM",
+        details: "Interstate financial routing network node identified during fund trail tracking.",
+        centrality: "0.62",
+        cluster: 3,
+        status: "Interstate Trail",
+      },
+
+      // 8. Disclosure Statements
+      {
+        id: "evidence-010",
+        label: "Disclosure Sajid",
+        name: "EVIDENCE-010: Disclosure of Sajid Khan",
+        type: "case",
+        x: 920,
+        y: 540,
+        risk: "HIGH",
+        details: "Investigative statement connection: Sahil Khan's name surfaced during investigation through disclosure material of co-accused Sajid Khan.",
+        centrality: "0.81",
+        cluster: 1,
+        status: "Investigative Statement Connection",
+      },
+      {
+        id: "evidence-011",
+        label: "Disclosure Narendra",
+        name: "EVIDENCE-011: Disclosure of Narendra Kumar",
+        type: "case",
+        x: 1020,
+        y: 540,
+        risk: "HIGH",
+        details: "Investigative statement connection: Co-accused Narendra Kumar statement connecting Sahil Khan to ATM cash handling.",
+        centrality: "0.79",
+        cluster: 1,
+        status: "Investigative Statement Connection",
+      },
+      {
+        id: "evidence-012",
+        label: "Disclosure Sabir",
+        name: "EVIDENCE-012: Disclosure of Sabir Khan",
+        type: "case",
+        x: 1120,
+        y: 540,
+        risk: "HIGH",
+        details: "Investigative statement connection: Co-accused Sabir Khan statement corroborating syndicate network operations.",
+        centrality: "0.75",
+        cluster: 1,
+        status: "Investigative Statement Connection",
+      },
+
+      // 9. NCRP & Cross-Case Intelligence
+      {
+        id: "ncrp-001",
+        label: "NCRP Report 1",
+        name: "NCRP-001: Cybercrime Report",
+        type: "case",
+        x: 620,
+        y: 680,
+        risk: "CRITICAL",
+        details: "Cross-case investigative link: Sahil Khan's bank account appeared in multiple NCRP cyber-fraud complaints. caseReference: NCRP-REFERENCE-NOT-DISCLOSED.",
+        centrality: "0.87",
+        cluster: 4,
+        status: "Cross-Case Investigative Link",
+      },
+      {
+        id: "ncrp-002",
+        label: "NCRP Report 2",
+        name: "NCRP-002: Cybercrime Report",
+        type: "case",
+        x: 500,
+        y: 680,
+        risk: "CRITICAL",
+        details: "Cross-case investigative link: Second NCRP complaint linking Account XXXXXX4408. caseReference: NCRP-REFERENCE-NOT-DISCLOSED.",
+        centrality: "0.85",
+        cluster: 4,
+        status: "Cross-Case Investigative Link",
+      },
+      {
+        id: "ncrp-003",
+        label: "NCRP Report 3",
+        name: "NCRP-003: Cybercrime Report",
+        type: "case",
+        x: 380,
+        y: 680,
+        risk: "CRITICAL",
+        details: "Cross-case investigative link: Third NCRP complaint linking Account XXXXXX4408. caseReference: NCRP-REFERENCE-NOT-DISCLOSED.",
+        centrality: "0.83",
+        cluster: 4,
+        status: "Cross-Case Investigative Link",
+      },
+      {
+        id: "case-005",
+        label: "CASE-005 (Historical)",
+        name: "Operation Amber Shield (CASE-005)",
+        type: "case",
+        x: 500,
+        y: 800,
+        risk: "HIGH",
+        details: "Prototype-linked historical case. Potential cross-case connection via Account XXXXXX4408 & NCRP complaint. Investigator verification required.",
+        centrality: "0.78",
+        cluster: 4,
+        status: "Potential Cross-Case Connection",
+      },
+      {
+        id: "case-006",
+        label: "CASE-006 (Historical)",
+        name: "Cyber Trace Mewat (CASE-006)",
+        type: "case",
+        x: 1220,
+        y: 480,
+        risk: "HIGH",
+        details: "Prototype-linked historical case. Potential cross-case connection via Device 358921098412001 IMEI. Investigator verification required.",
+        centrality: "0.74",
+        cluster: 4,
+        status: "Potential Cross-Case Connection",
+      },
+      {
+        id: "case-007",
+        label: "CASE-007 (Historical)",
+        name: "Eastern Hawala (CASE-007)",
+        type: "case",
+        x: 320,
+        y: 540,
+        risk: "HIGH",
+        details: "Prototype-linked historical case. Potential cross-case connection via Mule Account XXXXXX7782. Investigator verification required.",
+        centrality: "0.72",
+        cluster: 4,
+        status: "Potential Cross-Case Connection",
+      },
+
+      // 10. High Court Order Anchor
+      {
+        id: "evidence-court-001",
+        label: "High Court Order",
+        name: "EVIDENCE-COURT-001: Delhi High Court Order (14 Jan 2026)",
+        type: "case",
+        x: 920,
+        y: 340,
+        risk: "CRITICAL",
+        details: "Delhi High Court Bail Appl. 3788/2025 Order dated 14 Jan 2026. Anticipatory bail dismissed. Court observed custodial interrogation was necessary for tracing money trail and unearthing larger conspiracy.",
+        centrality: "0.98",
+        cluster: 1,
+        status: "Judicial Record (IndianKanoon 12999253)",
+      },
+    ],
+    edges: [
+      // Victim & Siphoning Flow
+      { id: "sk-e1", source: "person-005", target: "account-001", label: "Holds Account", type: "financial", isHighRisk: false },
+      { id: "sk-e2", source: "person-005", target: "account-002", label: "Linked Fixed Deposit", type: "financial", isHighRisk: false },
+      { id: "sk-e3", source: "person-005", target: "bank-001", label: "Banking Customer", type: "org", isHighRisk: false },
+      { id: "sk-e4", source: "person-005", target: "phone-002", label: "Uses Handset", type: "communication", isHighRisk: false },
+      { id: "sk-e5", source: "phone-002", target: "device-002", label: "Mounted In Device", type: "communication", isHighRisk: false },
+      { id: "sk-e6", source: "account-001", target: "account-003", label: "Unauthorized Debit ₹14L (APK)", type: "financial", isHighRisk: true },
+      { id: "sk-e7", source: "account-002", target: "account-001", label: "FD Liquidated ₹12L", type: "financial", isHighRisk: true },
+      { id: "sk-e8", source: "account-001", target: "account-004", label: "FD Siphoned ₹12L (Total ₹26L)", type: "financial", isHighRisk: true },
+      { id: "sk-e9", source: "account-003", target: "account-005", label: "Interstate Layering", type: "financial", isHighRisk: true },
+
+      // Mule to Sahil Khan Bank Account (> ₹5 Lakh Credit)
+      { id: "sk-e10", source: "account-003", target: "account-006", label: "Transferred Funds (> ₹5L)", type: "financial", isHighRisk: true },
+      { id: "sk-e11", source: "account-004", target: "account-006", label: "Transferred Funds", type: "financial", isHighRisk: true },
+      { id: "sk-e12", source: "person-001", target: "account-006", label: "Account Holder (> ₹5L Credit)", type: "financial", isHighRisk: true },
+
+      // Mule to ATM Cash Withdrawals
+      { id: "sk-e13", source: "account-003", target: "withdrawal-001", label: "Disbursed Cash ₹2.5L", type: "financial", isHighRisk: true },
+      { id: "sk-e14", source: "withdrawal-001", target: "atm-001", label: "Withdrawn At", type: "location", isHighRisk: false },
+      { id: "sk-e15", source: "account-004", target: "withdrawal-002", label: "Disbursed Cash ₹3.0L", type: "financial", isHighRisk: true },
+      { id: "sk-e16", source: "withdrawal-002", target: "atm-002", label: "Withdrawn At", type: "location", isHighRisk: false },
+      { id: "sk-e17", source: "account-003", target: "withdrawal-003", label: "Disbursed Cash ₹1.8L", type: "financial", isHighRisk: true },
+      { id: "sk-e18", source: "withdrawal-003", target: "atm-001", label: "Withdrawn At", type: "location", isHighRisk: false },
+
+      // ATM to CCTV to Accused Identification
+      { id: "sk-e19", source: "atm-001", target: "evidence-001", label: "CCTV Captured", type: "case", isHighRisk: true },
+      { id: "sk-e20", source: "evidence-001", target: "person-001", label: "Identified in CCTV Footage", type: "suspect", isHighRisk: true },
+      { id: "sk-e21", source: "evidence-001", target: "person-002", label: "Identified in CCTV Footage", type: "suspect", isHighRisk: true },
+      { id: "sk-e22", source: "evidence-001", target: "person-003", label: "Identified in CCTV Footage", type: "suspect", isHighRisk: true },
+
+      // Sahil Khan Mobile & Telecom / Tower Handshakes
+      { id: "sk-e23", source: "person-001", target: "phone-001", label: "Associated Mobile", type: "communication", isHighRisk: false },
+      { id: "sk-e24", source: "phone-001", target: "device-001", label: "Mounted In Handset", type: "communication", isHighRisk: false },
+      { id: "sk-e25", source: "phone-001", target: "cdr-001", label: "Telecom Records", type: "communication", isHighRisk: false },
+      { id: "sk-e26", source: "cdr-001", target: "cell-001", label: "Tower Handshake (Jaipur)", type: "location", isHighRisk: true },
+      { id: "sk-e27", source: "cdr-001", target: "cell-002", label: "Tower Handshake (Alwar)", type: "location", isHighRisk: true },
+      { id: "sk-e28", source: "cell-001", target: "loc-002", label: "Tower-Area Indication", type: "location", isHighRisk: false },
+      { id: "sk-e29", source: "cell-002", target: "loc-003", label: "Tower-Area Indication", type: "location", isHighRisk: false },
+
+      // Co-Accused Phones, Devices & Disclosures
+      { id: "sk-e30", source: "person-002", target: "phone-003", label: "Uses Handset", type: "communication", isHighRisk: false },
+      { id: "sk-e31", source: "phone-003", target: "device-003", label: "Mounted In Device", type: "communication", isHighRisk: false },
+      { id: "sk-e32", source: "person-002", target: "evidence-010", label: "Gave Statement", type: "case", isHighRisk: true },
+      { id: "sk-e33", source: "evidence-010", target: "person-001", label: "Named in Disclosure", type: "suspect", isHighRisk: true },
+
+      { id: "sk-e34", source: "person-003", target: "phone-004", label: "Uses Handset", type: "communication", isHighRisk: false },
+      { id: "sk-e35", source: "phone-004", target: "device-004", label: "Mounted In Device", type: "communication", isHighRisk: false },
+      { id: "sk-e36", source: "person-003", target: "evidence-011", label: "Gave Statement", type: "case", isHighRisk: true },
+      { id: "sk-e37", source: "evidence-011", target: "person-001", label: "Named in Disclosure", type: "suspect", isHighRisk: true },
+
+      { id: "sk-e38", source: "person-004", target: "phone-005", label: "Uses Handset", type: "communication", isHighRisk: false },
+      { id: "sk-e39", source: "phone-005", target: "device-005", label: "Mounted In Device", type: "communication", isHighRisk: false },
+      { id: "sk-e40", source: "person-004", target: "evidence-012", label: "Gave Statement", type: "case", isHighRisk: true },
+      { id: "sk-e41", source: "evidence-012", target: "person-001", label: "Named in Disclosure", type: "suspect", isHighRisk: true },
+
+      // NCRP & Cross-Case Links
+      { id: "sk-e42", source: "account-006", target: "ncrp-001", label: "Appeared in NCRP Report", type: "case", isHighRisk: true },
+      { id: "sk-e43", source: "account-006", target: "ncrp-002", label: "Appeared in NCRP Report", type: "case", isHighRisk: true },
+      { id: "sk-e44", source: "account-006", target: "ncrp-003", label: "Appeared in NCRP Report", type: "case", isHighRisk: true },
+      { id: "sk-e45", source: "ncrp-001", target: "case-005", label: "Cross-Case Link (Account)", type: "case", isHighRisk: true },
+      { id: "sk-e46", source: "device-001", target: "case-006", label: "Cross-Case Link (IMEI)", type: "case", isHighRisk: true },
+      { id: "sk-e47", source: "account-004", target: "case-007", label: "Cross-Case Link (Mule Acct)", type: "case", isHighRisk: true },
+
+      // High Court Order Link
+      { id: "sk-e48", source: "evidence-court-001", target: "person-001", label: "Anticipatory Bail Dismissed", type: "case", isHighRisk: true },
+      { id: "sk-e49", source: "person-005", target: "loc-001", label: "Resides / Reported In", type: "location", isHighRisk: false },
+    ],
+  },
+
+  // Case 1: Operation Nexus
+  "inv-001": {
+    caseId: "INV-2026-0142",
+    title: "Operation Nexus",
+    nodes: [
+      {
+        id: "target-01",
+        label: "TARGET-01",
+        name: "Viktor R. (Syndicate Leader)",
+        type: "suspect",
+        x: 480,
+        y: 260,
+        risk: "CRITICAL",
+        details: "Primary syndicate orchestrator. Connected to 14 financial flows and command hierarchy.",
+        centrality: "0.94",
+        cluster: 1,
+        status: "Under Active Surveillance",
+      },
+      {
+        id: "suspect-02",
+        label: "SUSPECT-02",
+        name: "Alexei M. (Logistics Enforcer)",
+        type: "suspect",
+        x: 330,
+        y: 160,
+        risk: "HIGH",
+        details: "Logistics enforcer, oversees maritime freight transshipment and port security evasion.",
+        centrality: "0.78",
+        cluster: 1,
+        status: "High Priority Intercept",
+      },
+      {
+        id: "phone-001",
+        label: "Phone +1",
+        name: "+1 (555) 019-2834",
+        type: "phone",
+        x: 220,
+        y: 90,
+        risk: "HIGH",
+        details: "Burner handset detected during 3 coordinated operations in port terminal zones.",
+        centrality: "0.65",
+        cluster: 1,
+        status: "Cell Tower Monitored",
+      },
+      {
+        id: "person-mark",
+        label: "Mark V.",
+        name: "Mark V. (Courier Associate)",
+        type: "person",
+        x: 650,
+        y: 150,
+        risk: "MEDIUM",
+        details: "Courier driver, frequents southern transit corridors and secondary drop zones.",
+        centrality: "0.52",
+        cluster: 2,
+        status: "Flagged Crossing",
+      },
+      {
+        id: "person-elena",
+        label: "Elena Rostova",
+        name: "Elena Rostova (Legal Rep)",
+        type: "person",
+        x: 750,
+        y: 290,
+        risk: "MEDIUM",
+        details: "Legal representative and authorized signatory for Aura Logistics and offshore accounts.",
+        centrality: "0.61",
+        cluster: 2,
+        status: "Subpoena Issued",
+      },
+      {
+        id: "org-aura",
+        label: "Aura Logistics",
+        name: "Aura Logistics Holding",
+        type: "org",
+        x: 250,
+        y: 270,
+        risk: "HIGH",
+        details: "Registered shell freight enterprise in Limassol with multi-tier offshore holding structure.",
+        centrality: "0.82",
+        cluster: 1,
+        status: "Sanctions Review",
+      },
+      {
+        id: "vehicle-suv",
+        label: "SUV TX-89",
+        name: "Black Armored SUV (TX-89)",
+        type: "vehicle",
+        x: 440,
+        y: 410,
+        risk: "HIGH",
+        details: "Armored transport spotted at 4 covert meetings between Alexei M. and local couriers.",
+        centrality: "0.58",
+        cluster: 1,
+        status: "Impound Order Active",
+      },
+      {
+        id: "loc-warehouse",
+        label: "Warehouse #4",
+        name: "Dock Warehouse #4 (Rotterdam)",
+        type: "location",
+        x: 140,
+        y: 390,
+        risk: "CRITICAL",
+        details: "Primary contraband container staging facility. Multiple camera blackouts logged.",
+        centrality: "0.74",
+        cluster: 1,
+        status: "Raid Warrant Prepared",
+      },
+      {
+        id: "case-crypto",
+        label: "Vault 0x7F...44b",
+        name: "Crypto Vault 0x7F...44b",
+        type: "financial",
+        x: 640,
+        y: 390,
+        risk: "CRITICAL",
+        details: "Multi-sig crypto wallet holding over $1.4M USDT tied to wholesale illicit shipments.",
+        centrality: "0.89",
+        cluster: 2,
+        status: "Asset Freeze Requested",
+      },
+      {
+        id: "loc-quay14",
+        label: "Terminal 14",
+        name: "Quayside Cargo Terminal 14",
+        type: "location",
+        x: 310,
+        y: 470,
+        risk: "MEDIUM",
+        details: "Commercial container terminal berths connecting Baltic freight to Atlantic line.",
+        centrality: "0.45",
+        cluster: 1,
+        status: "Customs Inspected",
+      },
+    ],
+    edges: [
+      { id: "e1", source: "target-01", target: "suspect-02", label: "Commands", type: "suspect", isHighRisk: true },
+      { id: "e2", source: "suspect-02", target: "phone-001", label: "Uses Handset", type: "communication", isHighRisk: false },
+      { id: "e3", source: "suspect-02", target: "org-aura", label: "Director of Ops", type: "org", isHighRisk: true },
+      { id: "e4", source: "org-aura", target: "loc-warehouse", label: "Leases Facility", type: "location", isHighRisk: true },
+      { id: "e5", source: "target-01", target: "case-crypto", label: "Signatory Authority", type: "financial", isHighRisk: true },
+      { id: "e6", source: "suspect-02", target: "vehicle-suv", label: "Frequent Passenger", type: "vehicle", isHighRisk: false },
+      { id: "e7", source: "person-mark", target: "target-01", label: "Direct Courier", type: "suspect", isHighRisk: true },
+      { id: "e8", source: "person-mark", target: "loc-warehouse", label: "Logged Access", type: "location", isHighRisk: false },
+      { id: "e9", source: "person-elena", target: "org-aura", label: "Corporate Secretary", type: "org", isHighRisk: false },
+      { id: "e10", source: "person-elena", target: "case-crypto", label: "Escrow Trustee", type: "financial", isHighRisk: false },
+      { id: "e11", source: "org-aura", target: "loc-quay14", label: "Manifest Broker", type: "location", isHighRisk: false },
+      { id: "e12", source: "vehicle-suv", target: "loc-quay14", label: "ANPR Sighting", type: "vehicle", isHighRisk: false },
+    ],
+  },
+
+  // Case 2: Operation Shadow Breach
+  "inv-002": {
+    caseId: "CYB-2026-0481",
+    title: "Operation Shadow Breach",
+    nodes: [
+      {
+        id: "cyber-01",
+        label: "GhostShell",
+        name: "GhostShell Collective (Threat Actor)",
+        type: "org",
+        x: 490,
+        y: 240,
+        risk: "CRITICAL",
+        details: "State-sponsored cyber offensive cluster active across Baltic maritime infrastructure.",
+        centrality: "0.96",
+        cluster: 1,
+        status: "Active Advanced Persistent Threat",
+      },
+      {
+        id: "cyber-c2",
+        label: "Baltic C2 (185.220.101.5)",
+        name: "Baltic C2 Server (IP 185.220.101.5)",
+        type: "phone",
+        x: 320,
+        y: 150,
+        risk: "CRITICAL",
+        details: "Primary command & control gateway beaconing reverse SSH tunnels into port switches.",
+        centrality: "0.85",
+        cluster: 1,
+        status: "Under Active Sinkhole Monitoring",
+      },
+      {
+        id: "cyber-broker",
+        label: "Nikolai Vance",
+        name: "Nikolai Vance (Access Broker)",
+        type: "suspect",
+        x: 650,
+        y: 160,
+        risk: "HIGH",
+        details: "Darkweb initial access broker selling compromised VPN credentials for port terminal operators.",
+        centrality: "0.74",
+        cluster: 2,
+        status: "Interpol Red Notice Flagged",
+      },
+      {
+        id: "cyber-keyring",
+        label: "SSH-Keyring #4096",
+        name: "Exfiltrated Root SSH Keyring",
+        type: "case",
+        x: 230,
+        y: 310,
+        risk: "CRITICAL",
+        details: "Cryptographic credentials stolen during spear-phishing incident against marine harbor dispatch.",
+        centrality: "0.79",
+        cluster: 1,
+        status: "Cryptographic Breach Verified",
+      },
+      {
+        id: "cyber-proxy",
+        label: "Limassol Relay",
+        name: "Limassol Proxy Gateway",
+        type: "location",
+        x: 430,
+        y: 420,
+        risk: "HIGH",
+        details: "Cloud VPS relay used to obfuscate traffic origin and bounce encrypted payloads.",
+        centrality: "0.62",
+        cluster: 1,
+        status: "Subpoena Issued to Provider",
+      },
+      {
+        id: "cyber-scada",
+        label: "SCADA Node #12",
+        name: "Port SCADA Control Switch #12",
+        type: "location",
+        x: 680,
+        y: 360,
+        risk: "HIGH",
+        details: "Industrial programmable logic controller governing automated gantry crane container releases.",
+        centrality: "0.68",
+        cluster: 2,
+        status: "Quarantined / Air-Gapped",
+      },
+      {
+        id: "cyber-darknet",
+        label: "ShadowLeak Forum",
+        name: "ShadowLeak Underground Marketplace",
+        type: "org",
+        x: 770,
+        y: 240,
+        risk: "MEDIUM",
+        details: "Onion marketplace where credential dump was offered for 35 Monero.",
+        centrality: "0.55",
+        cluster: 2,
+        status: "Monitored Forum Thread",
+      },
+    ],
+    edges: [
+      { id: "cb1", source: "cyber-01", target: "cyber-c2", label: "Commands Gateway", type: "suspect", isHighRisk: true },
+      { id: "cb2", source: "cyber-broker", target: "cyber-01", label: "Supplies Access", type: "suspect", isHighRisk: true },
+      { id: "cb3", source: "cyber-broker", target: "cyber-keyring", label: "Exfiltrated File", type: "case", isHighRisk: true },
+      { id: "cb4", source: "cyber-c2", target: "cyber-keyring", label: "Authenticates With", type: "communication", isHighRisk: true },
+      { id: "cb5", source: "cyber-c2", target: "cyber-proxy", label: "Tunnels Traffic", type: "location", isHighRisk: false },
+      { id: "cb6", source: "cyber-c2", target: "cyber-scada", label: "Injected Exploit", type: "location", isHighRisk: true },
+      { id: "cb7", source: "cyber-broker", target: "cyber-darknet", label: "Posted Listing", type: "org", isHighRisk: false },
+    ],
+  },
+
+  // Case 3: Syndicate CashWash Ledger
+  "inv-003": {
+    caseId: "FIN-2026-0819",
+    title: "Syndicate CashWash Ledger",
+    nodes: [
+      {
+        id: "fin-broker",
+        label: "Marcus Brody",
+        name: "Marcus Brody (Fiduciary Consultant)",
+        type: "suspect",
+        x: 480,
+        y: 220,
+        risk: "CRITICAL",
+        details: "Zurich-based wealth manager specializing in multi-tier offshore trusts and crypto layering.",
+        centrality: "0.92",
+        cluster: 1,
+        status: "Subject of Mutual Legal Assistance Treaty",
+      },
+      {
+        id: "fin-bank",
+        label: "Zurich Clearing AG",
+        name: "Zurich Private Clearing Bank AG",
+        type: "org",
+        x: 320,
+        y: 130,
+        risk: "HIGH",
+        details: "Private banking institution under regulatory scrutiny for non-compliant wire threshold flags.",
+        centrality: "0.81",
+        cluster: 1,
+        status: "FINMA Regulatory Audit",
+      },
+      {
+        id: "fin-account",
+        label: "Account #CH-9921",
+        name: "Numbered Fiduciary Account #CH-9921",
+        type: "financial",
+        x: 230,
+        y: 280,
+        risk: "CRITICAL",
+        details: "Correspondent settlement account routed over €34M in structured wires over 90 days.",
+        centrality: "0.88",
+        cluster: 1,
+        status: "Judicial Restraint Order Imposed",
+      },
+      {
+        id: "fin-mixer",
+        label: "TRC20 Mixer 0x33e",
+        name: "TRC-20 Mixer Contract 0x33e...9a",
+        type: "financial",
+        x: 420,
+        y: 390,
+        risk: "CRITICAL",
+        details: "Decentralized automated liquidity pool used to break transaction provenance on Tron network.",
+        centrality: "0.86",
+        cluster: 2,
+        status: "OFAC Sanction Match",
+      },
+      {
+        id: "fin-panglobal",
+        label: "PanGlobal Shell",
+        name: "PanGlobal Shell Holdings B.V.",
+        type: "org",
+        x: 650,
+        y: 180,
+        risk: "HIGH",
+        details: "Holding enterprise registered with nominee directors and bearer share ownership.",
+        centrality: "0.75",
+        cluster: 2,
+        status: "Corporate Veil Piercing Petition",
+      },
+      {
+        id: "fin-trust",
+        label: "Nicosia Trust Ltd",
+        name: "Nicosia Fiduciary Trust Services",
+        type: "org",
+        x: 690,
+        y: 330,
+        risk: "MEDIUM",
+        details: "Corporate administrator issuing legal opinions and nominee certificates for holding tiers.",
+        centrality: "0.67",
+        cluster: 2,
+        status: "Registrar Records Subpoenaed",
+      },
+    ],
+    edges: [
+      { id: "fn1", source: "fin-broker", target: "fin-bank", label: "Authorized Rep", type: "financial", isHighRisk: true },
+      { id: "fn2", source: "fin-bank", target: "fin-account", label: "Hosts Account", type: "financial", isHighRisk: true },
+      { id: "fn3", source: "fin-broker", target: "fin-panglobal", label: "De Facto Controller", type: "org", isHighRisk: true },
+      { id: "fn4", source: "fin-panglobal", target: "fin-account", label: "Incoming Wire Stream", type: "financial", isHighRisk: true },
+      { id: "fn5", source: "fin-account", target: "fin-mixer", label: "Crypto Purchase Escrow", type: "financial", isHighRisk: true },
+      { id: "fn6", source: "fin-panglobal", target: "fin-trust", label: "Nominee Admin", type: "org", isHighRisk: false },
+    ],
+  },
+
+  // Case 4: Taskforce Border Shield
+  "inv-004": {
+    caseId: "TRF-2026-0231",
+    title: "Taskforce Border Shield",
+    nodes: [
+      {
+        id: "trf-driver",
+        label: "Javier Soto",
+        name: "Javier Soto (Logistics Driver)",
+        type: "suspect",
+        x: 460,
+        y: 220,
+        risk: "HIGH",
+        details: "Commercial CDL transport driver with 12 border crossings flagged for irregular weight telemetry.",
+        centrality: "0.89",
+        cluster: 1,
+        status: "Arrested at Checkpoint Echo-7",
+      },
+      {
+        id: "trf-truck",
+        label: "Volvo FH16 (TX-44)",
+        name: "Volvo FH16 Heavy Hauler TX-44",
+        type: "vehicle",
+        x: 310,
+        y: 150,
+        risk: "CRITICAL",
+        details: "Commercial tractor trailer retrofitted with welded secondary compartments inside chassis.",
+        centrality: "0.85",
+        cluster: 1,
+        status: "Impounded for Physical Forensics",
+      },
+      {
+        id: "trf-loc-checkpoint",
+        label: "Checkpoint Echo-7",
+        name: "Laredo Border Crossing Echo-7",
+        type: "location",
+        x: 210,
+        y: 320,
+        risk: "HIGH",
+        details: "International border crossing intermodal inspection lane with X-ray backscatter imaging.",
+        centrality: "0.78",
+        cluster: 1,
+        status: "Active Law Enforcement Site",
+      },
+      {
+        id: "trf-manifest",
+        label: "Manifest MX-401",
+        name: "Forged Customs Manifest #MX-401",
+        type: "case",
+        x: 620,
+        y: 160,
+        risk: "HIGH",
+        details: "Bill of lading declaring agricultural perishables matching counterfeit phytosanitary seals.",
+        centrality: "0.72",
+        cluster: 2,
+        status: "Seized Physical Evidence #09",
+      },
+      {
+        id: "trf-brokerage",
+        label: "Border Brokerage",
+        name: "Border Cargo Brokerage Corp",
+        type: "org",
+        x: 690,
+        y: 310,
+        risk: "MEDIUM",
+        details: "Customs brokerage firm submitting automated pre-clearance documents under scrutiny.",
+        centrality: "0.64",
+        cluster: 2,
+        status: "Audit Notice Served",
+      },
+      {
+        id: "trf-warehouse",
+        label: "Houston Hub B",
+        name: "Texas Corridor Warehouse B (Houston)",
+        type: "location",
+        x: 440,
+        y: 410,
+        risk: "HIGH",
+        details: "Staging facility where trailer was scheduled to offload concealed cargo before distribution.",
+        centrality: "0.77",
+        cluster: 1,
+        status: "Surveillance Active",
+      },
+    ],
+    edges: [
+      { id: "tr1", source: "trf-driver", target: "trf-truck", label: "Registered Operator", type: "vehicle", isHighRisk: true },
+      { id: "tr2", source: "trf-truck", target: "trf-loc-checkpoint", label: "Intercepted At", type: "location", isHighRisk: true },
+      { id: "tr3", source: "trf-driver", target: "trf-manifest", label: "Presented Document", type: "case", isHighRisk: false },
+      { id: "tr4", source: "trf-brokerage", target: "trf-manifest", label: "Generated Manifest", type: "org", isHighRisk: true },
+      { id: "tr5", source: "trf-truck", target: "trf-warehouse", label: "GPS Destination", type: "location", isHighRisk: true },
+      { id: "tr6", source: "trf-driver", target: "trf-warehouse", label: "Frequent Trips", type: "location", isHighRisk: false },
+    ],
+  },
+
+  // Case 5: Operation Blue Horizon
+  "inv-005": {
+    caseId: "INV-2025-089",
+    title: "Operation Blue Horizon",
+    nodes: [
+      {
+        id: "blue-ship",
+        label: "MV Atlantic Trader",
+        name: "MV Atlantic Trader (Freight Vessel)",
+        type: "vehicle",
+        x: 460,
+        y: 220,
+        risk: "HIGH",
+        details: "Panamanian flagged container freighter subject to historical narcotics interdiction precedence.",
+        centrality: "0.91",
+        cluster: 1,
+        status: "Harbor Anchorage Monitored",
+      },
+      {
+        id: "blue-port",
+        label: "Berth 402 (Antwerp)",
+        name: "Port of Antwerp Berth 402",
+        type: "location",
+        x: 310,
+        y: 150,
+        risk: "MEDIUM",
+        details: "Dedicated bulk container unloading berth with automated crane telemetry.",
+        centrality: "0.76",
+        cluster: 1,
+        status: "Port Police Berth Surveillance",
+      },
+      {
+        id: "blue-dossier",
+        label: "Precedence File #89",
+        name: "Maritime Precedence File #89",
+        type: "case",
+        x: 640,
+        y: 180,
+        risk: "MEDIUM",
+        details: "Historical case records from 2025 detailing previous container tampering methods.",
+        centrality: "0.68",
+        cluster: 2,
+        status: "Archived Forensic Dossier",
+      },
+      {
+        id: "blue-traffic",
+        label: "Scheldt Vessel VTS",
+        name: "Scheldt River Traffic Control",
+        type: "location",
+        x: 420,
+        y: 380,
+        risk: "LOW",
+        details: "Maritime transponder radar telemetry logged by coastal river authority.",
+        centrality: "0.52",
+        cluster: 1,
+        status: "AIS Radar Data Stream Verified",
+      },
+    ],
+    edges: [
+      { id: "bh1", source: "blue-ship", target: "blue-port", label: "Moored At Berth", type: "location", isHighRisk: false },
+      { id: "bh2", source: "blue-dossier", target: "blue-ship", label: "Historical Link", type: "case", isHighRisk: true },
+      { id: "bh3", source: "blue-ship", target: "blue-traffic", label: "AIS Transponder Signal", type: "location", isHighRisk: false },
+    ],
+  },
+};
+
+interface StoredGraphStore {
+  [invId: string]: {
+    nodes: GraphNode[];
+    edges: GraphEdge[];
+    positions?: Record<string, { x: number; y: number }>;
+  };
+}
+
+function ensureStoreFile(): StoredGraphStore {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(GRAPH_STORE_FILE)) {
+    const initial: StoredGraphStore = {};
+    for (const [key, data] of Object.entries(INITIAL_CASE_GRAPHS)) {
+      initial[key] = {
+        nodes: data.nodes,
+        edges: data.edges,
+        positions: {},
+      };
+    }
+    fs.writeFileSync(GRAPH_STORE_FILE, JSON.stringify(initial, null, 2), "utf-8");
+    return initial;
+  }
+
+  try {
+    const content = fs.readFileSync(GRAPH_STORE_FILE, "utf-8");
+    return JSON.parse(content);
+  } catch (err) {
+    console.error("[GraphStore] Read error:", err);
+    return {};
+  }
+}
+
+function saveStore(store: StoredGraphStore): void {
+  ensureStoreFile();
+  fs.writeFileSync(GRAPH_STORE_FILE, JSON.stringify(store, null, 2), "utf-8");
+}
+
+function resolveInvestigationKey(idOrCaseId: string): string {
+  const norm = idOrCaseId.toLowerCase().trim();
+  if (
+    norm === "case-2025-004" ||
+    norm === "inv-2025-004" ||
+    norm === "inv-004" ||
+    norm === "inv-004-sahil-khan" ||
+    norm.includes("2025-004") ||
+    norm.includes("sahil")
+  ) {
+    return "inv-004-sahil-khan";
+  }
+  if (INITIAL_CASE_GRAPHS[norm]) return norm;
+  for (const [key, val] of Object.entries(INITIAL_CASE_GRAPHS)) {
+    if (val.caseId.toLowerCase() === norm || key.toLowerCase() === norm) {
+      return key;
+    }
+  }
+  return "inv-001";
+}
+
+export async function getInvestigationGraph(
+  idOrCaseId: string
+): Promise<InvestigationGraphData> {
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  const baseDef = INITIAL_CASE_GRAPHS[key] || INITIAL_CASE_GRAPHS["inv-001"];
+
+  const storedData = store[key] || {
+    nodes: baseDef.nodes,
+    edges: baseDef.edges,
+    positions: {},
+  };
+
+  // Merge saved positions into nodes
+  const positions = storedData.positions || {};
+  const mergedNodes = (storedData.nodes || baseDef.nodes).map((node) => {
+    if (positions[node.id]) {
+      return {
+        ...node,
+        x: positions[node.id].x,
+        y: positions[node.id].y,
+      };
+    }
+    return node;
+  });
+
+  return {
+    investigationId: key,
+    caseId: baseDef.caseId,
+    title: baseDef.title,
+    nodes: mergedNodes,
+    edges: storedData.edges || baseDef.edges,
+    lastUpdated: new Date().toISOString(),
+  };
+}
+
+export async function saveNodePositions(
+  idOrCaseId: string,
+  newPositions: Record<string, { x: number; y: number }>
+): Promise<{ success: boolean }> {
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  if (!store[key]) {
+    const baseDef = INITIAL_CASE_GRAPHS[key] || INITIAL_CASE_GRAPHS["inv-001"];
+    store[key] = {
+      nodes: baseDef.nodes,
+      edges: baseDef.edges,
+      positions: {},
+    };
+  }
+
+  store[key].positions = {
+    ...(store[key].positions || {}),
+    ...newPositions,
+  };
+
+  saveStore(store);
+  return { success: true };
+}
+
+export interface AddCluePayload {
+  nodeType: string;
+  title: string;
+  clueObservation: string;
+  source?: string;
+  referenceId?: string;
+  dateTime?: string;
+  tags?: string[];
+  priority?: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+  confidence?: string;
+  positionX?: number;
+  positionY?: number;
+}
+
+export async function addInvestigatorClue(
+  idOrCaseId: string,
+  payload: AddCluePayload,
+  userId = "usr-analyst-01",
+  userName = "Amit Sharma"
+): Promise<{ success: boolean; clueNode?: GraphNode; error?: string }> {
+  if (!payload.title || !payload.title.trim()) {
+    return { success: false, error: "Title is required for investigator clue." };
+  }
+  if (!payload.clueObservation || !payload.clueObservation.trim()) {
+    return { success: false, error: "Observation description is required." };
+  }
+
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  if (!store[key]) {
+    const baseDef = INITIAL_CASE_GRAPHS[key] || INITIAL_CASE_GRAPHS["inv-001"];
+    store[key] = { nodes: [...baseDef.nodes], edges: [...baseDef.edges], positions: {} };
+  }
+
+  const clueId = `clue-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 5)}`;
+  const priority = payload.priority || "HIGH";
+
+  // Map user-selected type to internal graph node type
+  const typeMap: Record<string, GraphNode["type"]> = {
+    person: "person",
+    phone: "phone",
+    vehicle: "vehicle",
+    location: "location",
+    organization: "org",
+    org: "org",
+    account: "financial",
+    wallet: "financial",
+    evidence: "case",
+    document: "case",
+    event: "case",
+  };
+  const resolvedType = payload.nodeType
+    ? typeMap[payload.nodeType.toLowerCase()] || "case"
+    : "case";
+
+  const newClueNode: GraphNode = {
+    id: clueId,
+    label: payload.title.slice(0, 16),
+    name: payload.title,
+    type: resolvedType,
+    x: payload.positionX ?? 500 + Math.floor(Math.random() * 60 - 30),
+    y: payload.positionY ?? 300 + Math.floor(Math.random() * 60 - 30),
+    risk: priority,
+    details: payload.clueObservation,
+    centrality: "0.50",
+    cluster: 99, // Special analyst cluster
+    status: "Analyst Clue",
+  };
+
+  // Attach analyst metadata
+  (newClueNode as any).isAnalystClue = true;
+  (newClueNode as any).clueData = {
+    observation: payload.clueObservation,
+    source: payload.source || "Field Observation",
+    referenceId: payload.referenceId || "CLUE-" + Date.now().toString().slice(-4),
+    dateTime: payload.dateTime || new Date().toISOString(),
+    tags: payload.tags || ["analyst-lead"],
+    confidence: payload.confidence,
+    priority,
+    createdBy: userName,
+  };
+
+  store[key].nodes.push(newClueNode);
+  if (!store[key].positions) store[key].positions = {};
+  store[key].positions![clueId] = { x: newClueNode.x, y: newClueNode.y };
+
+  saveStore(store);
+
+  // Record Audit Trail Event
+  await recordAuditEvent({
+    id: `aud-${Date.now().toString(36)}`,
+    action: "CLUE_CREATED",
+    userId,
+    userName,
+    field: "clue",
+    newValue: payload.title,
+    details: `Added manual clue '${payload.title}' (${priority}) to investigation ${INITIAL_CASE_GRAPHS[key]?.caseId || key}`,
+    timestamp: new Date().toISOString(),
+  });
+
+  return { success: true, clueNode: newClueNode };
+}
+
+export async function updateInvestigatorClue(
+  idOrCaseId: string,
+  clueId: string,
+  updates: Partial<AddCluePayload>,
+  userId = "usr-analyst-01",
+  userName = "Amit Sharma"
+): Promise<{ success: boolean; updatedNode?: GraphNode; error?: string }> {
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  if (!store[key]) return { success: false, error: "Investigation graph not found." };
+
+  const nodeIdx = store[key].nodes.findIndex((n) => n.id === clueId);
+  if (nodeIdx === -1) return { success: false, error: "Clue not found in investigation." };
+
+  const node = store[key].nodes[nodeIdx];
+  if (updates.title) {
+    node.name = updates.title;
+    node.label = updates.title.slice(0, 16);
+  }
+  if (updates.clueObservation) {
+    node.details = updates.clueObservation;
+  }
+  if (updates.priority) {
+    node.risk = updates.priority;
+  }
+  if ((node as any).clueData) {
+    (node as any).clueData = {
+      ...(node as any).clueData,
+      ...(updates.clueObservation ? { observation: updates.clueObservation } : {}),
+      ...(updates.source ? { source: updates.source } : {}),
+      ...(updates.referenceId ? { referenceId: updates.referenceId } : {}),
+      ...(updates.priority ? { priority: updates.priority } : {}),
+      ...(updates.confidence ? { confidence: updates.confidence } : {}),
+    };
+  }
+
+  saveStore(store);
+
+  await recordAuditEvent({
+    id: `aud-${Date.now().toString(36)}`,
+    action: "CLUE_UPDATED",
+    userId,
+    userName,
+    field: "clue",
+    newValue: updates.title || node.name,
+    details: `Updated manual clue '${node.name}' in investigation ${INITIAL_CASE_GRAPHS[key]?.caseId || key}`,
+    timestamp: new Date().toISOString(),
+  });
+
+  return { success: true, updatedNode: node };
+}
+
+export async function deleteInvestigatorClue(
+  idOrCaseId: string,
+  clueId: string,
+  userId = "usr-analyst-01",
+  userName = "Amit Sharma"
+): Promise<{ success: boolean; error?: string }> {
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  if (!store[key]) return { success: false, error: "Investigation graph not found." };
+
+  const node = store[key].nodes.find((n) => n.id === clueId);
+  if (!node) return { success: false, error: "Clue not found." };
+
+  // Only allow deleting analyst-created clues
+  if (!(node as any).isAnalystClue && !clueId.startsWith("clue-")) {
+    return { success: false, error: "System-generated entities cannot be deleted through clue manager." };
+  }
+
+  // Remove node
+  store[key].nodes = store[key].nodes.filter((n) => n.id !== clueId);
+  // Remove edges connected to this clue
+  store[key].edges = store[key].edges.filter(
+    (e) => e.source !== clueId && e.target !== clueId
+  );
+  if (store[key].positions && store[key].positions![clueId]) {
+    delete store[key].positions![clueId];
+  }
+
+  saveStore(store);
+
+  await recordAuditEvent({
+    id: `aud-${Date.now().toString(36)}`,
+    action: "CLUE_DELETED",
+    userId,
+    userName,
+    field: "clue",
+    details: `Deleted manual clue '${node.name}' and connected relationships from investigation`,
+    timestamp: new Date().toISOString(),
+  });
+
+  return { success: true };
+}
+
+export async function connectInvestigatorClue(
+  idOrCaseId: string,
+  sourceId: string,
+  targetId: string,
+  relationshipType: string,
+  notes?: string,
+  userId = "usr-analyst-01",
+  userName = "Amit Sharma"
+): Promise<{ success: boolean; newEdge?: GraphEdge; error?: string }> {
+  const key = resolveInvestigationKey(idOrCaseId);
+  const store = ensureStoreFile();
+  if (!store[key]) return { success: false, error: "Investigation graph not found." };
+
+  const srcNode = store[key].nodes.find((n) => n.id === sourceId);
+  const tgtNode = store[key].nodes.find((n) => n.id === targetId);
+
+  if (!srcNode || !tgtNode) {
+    return { success: false, error: "Both source and target nodes must exist to create connection." };
+  }
+
+  const edgeId = `edge-analyst-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 5)}`;
+  const newEdge: GraphEdge = {
+    id: edgeId,
+    source: sourceId,
+    target: targetId,
+    label: relationshipType || "Potential Connection",
+    type: "analyst" as any,
+    isHighRisk: false,
+  };
+
+  // Mark as analyst-entered connection
+  (newEdge as any).isAnalystCreated = true;
+  (newEdge as any).notes = notes || "Analyst-entered investigative hypothesis";
+
+  store[key].edges.push(newEdge);
+  saveStore(store);
+
+  await recordAuditEvent({
+    id: `aud-${Date.now().toString(36)}`,
+    action: "CLUE_CONNECTED",
+    userId,
+    userName,
+    field: "relationship",
+    details: `Connected '${srcNode.name}' to '${tgtNode.name}' with hypothesis '${relationshipType}'`,
+    timestamp: new Date().toISOString(),
+  });
+
+  return { success: true, newEdge };
+}
