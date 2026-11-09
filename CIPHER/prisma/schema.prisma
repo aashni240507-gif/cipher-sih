@@ -1,0 +1,151 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum InvestigationStatus {
+  ACTIVE
+  PENDING_REVIEW
+  MONITORED
+  ARCHIVED
+  CLOSED
+}
+
+enum GraphSyncStatus {
+  SYNCED
+  PENDING_SYNC
+  LOCAL_GRAPH
+  FAILED
+}
+
+model User {
+  id             String          @id @default(uuid())
+  email          String          @unique
+  name           String
+  badgeNumber    String?
+  clearanceLevel String          @default("L3")
+  role           String          @default("INVESTIGATOR")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  investigations Investigation[]
+}
+
+model Investigation {
+  id                 String              @id @default(uuid())
+  caseId             String              @unique
+  title              String
+  type               String
+  priority           Priority            @default(HIGH)
+  status             InvestigationStatus @default(ACTIVE)
+  leadInvestigator   String
+  leadInvestigatorId String?
+  user               User?               @relation(fields: [leadInvestigatorId], references: [id])
+  startDate          String
+  jurisdiction       String
+  description        String
+  entitiesCount      Int                 @default(0)
+  relationshipsCount Int                 @default(0)
+  evidenceCount      Int                 @default(0)
+  alertsCount        Int                 @default(0)
+  graphSyncStatus    GraphSyncStatus     @default(LOCAL_GRAPH)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  entities       Entity[]
+  evidence       Evidence[]
+  timelineEvents TimelineEvent[]
+  alerts         Alert[]
+  aiInsights     AIInsight[]
+}
+
+model Entity {
+  id              String        @id @default(uuid())
+  investigationId String
+  investigation   Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  label           String
+  name            String
+  type            String
+  risk            Priority      @default(MEDIUM)
+  centrality      Float         @default(0.5)
+  cluster         Int           @default(1)
+  details         String?
+  createdAt       DateTime      @default(now())
+}
+
+model Evidence {
+  id              String        @id @default(uuid())
+  investigationId String
+  investigation   Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  evidenceCode    String
+  title           String
+  type            String
+  fileHash        String?
+  source          String
+  confidence      String        @default("90%")
+  custodyDate     DateTime      @default(now())
+}
+
+model TimelineEvent {
+  id              String        @id @default(uuid())
+  investigationId String
+  investigation   Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  title           String
+  category        String
+  timestamp       DateTime
+  description     String
+  location        String?
+}
+
+model Alert {
+  id              String        @id @default(uuid())
+  investigationId String
+  investigation   Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  title           String
+  severity        Priority      @default(HIGH)
+  description     String
+  status          String        @default("ACTIVE")
+  createdAt       DateTime      @default(now())
+}
+
+model AIInsight {
+  id              String        @id @default(uuid())
+  investigationId String
+  investigation   Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  title           String
+  summary         String
+  confidence      String        @default("92%")
+  createdAt       DateTime      @default(now())
+}
+
+model ChatConversation {
+  id              String        @id @default(uuid())
+  userId          String
+  investigationId String?
+  title           String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  messages        ChatMessage[]
+}
+
+model ChatMessage {
+  id             String           @id @default(uuid())
+  conversationId String
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String           // system, user, assistant, tool
+  content        String
+  toolName       String?
+  toolCallData   String?          // JSON metadata for tool execution
+  createdAt      DateTime         @default(now())
+}
+

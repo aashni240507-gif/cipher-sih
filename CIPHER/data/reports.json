@@ -1,0 +1,3380 @@
+[
+  {
+    "id": "REP-MTTJYT8I-424",
+    "reportNumber": "CIPHER-JUDICIAL-CYB-2026-0481-8052",
+    "caseId": "CYB-2026-0481",
+    "caseTitle": "Operation Shadow Breach",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: Operation Shadow Breach",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T03:42:33.858Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Operational briefing on Operation Shadow Breach (CYB-2026-0481). Combines maritime registry logs, cryptocurrency liquidity dispersion, burner cellular intercepts, and community modularity clustering.",
+    "facts": [
+      {
+        "id": "FACT-101",
+        "category": "PORT_CUSTOMS",
+        "statement": "Rotterdam Port Authority container inspection seized illicit manifest discrepancy matching vessel MV Northern Star registered to Aura Logistics Ltd.",
+        "sourceProvenance": "Customs Inspection Notice #8912-A & Bill of Lading",
+        "verificationLevel": "LAW_ENFORCEMENT_FILING",
+        "evidenceId": "EVD-0142-01",
+        "timestamp": "2026-05-12T08:30:00Z"
+      },
+      {
+        "id": "FACT-102",
+        "category": "BLOCKCHAIN_LEDGER",
+        "statement": "320,000 USDT transferred from PanGlobal Trading treasury wallet to mixer deposit contract 0x7F...44b within 180 seconds of vessel docking.",
+        "sourceProvenance": "Etherscan MLAT Subpoena Record Digest #44b",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-04",
+        "timestamp": "2026-05-12T09:14:00Z"
+      },
+      {
+        "id": "FACT-103",
+        "category": "TELECOM_CDR",
+        "statement": "Burner mobile number +1 (555) 019-2834 logged 27 encrypted sessions with Viktor R. (TARGET-01) from maritime tower sector 4B.",
+        "sourceProvenance": "Telecom Tower Intercept Dump Sector 4B",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-02",
+        "timestamp": "2026-05-12T10:05:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "7 Nodes / 7 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "TARGET-01 (Viktor R.): Score 0.942",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "$320,000 USDT dissipated in 180 sec",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Cross-referencing maritime arrival logs with blockchain transaction velocity indicates an orchestrated off-ramp mechanism coinciding with cargo handover windows.",
+        "groundedEntities": [
+          "Viktor R. (TARGET-01)",
+          "Crypto Vault 0x7F...44b",
+          "Aura Logistics Ltd"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "PanGlobal Trading",
+          "Limassol Registry"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "CLUE-DEMO-01",
+        "title": "Unverified Informant Tip - Vehicle Spotted Near Withdrawal Point",
+        "description": "Local surveillance observer reported dark sedan idling outside ATM booth during withdrawal window.",
+        "author": "Duty Officer, PS Cyber South-West",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T03:42:33.858Z"
+      }
+    ],
+    "digestHash": "f513dcf9c954155a9ed033133778e31fbd42578ea2148fe72030c622512b0ce3",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Transmit judicial assistance request (MLAT) to Cypriot maritime registry for beneficial ownership disclosure of Aura Logistics Ltd.",
+      "Request exchange telemetry on deposit wallet 0x7F...44b to trace off-ramp fiat accounts.",
+      "Deploy perimeter ANPR surveillance at Dock Warehouse #4 for registered transport plates."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 3,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTJYT8D-794",
+    "reportNumber": "CIPHER-JUDICIAL-CYB-2026-0481-8470",
+    "caseId": "CYB-2026-0481",
+    "caseTitle": "Operation Shadow Breach",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: Operation Shadow Breach",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T03:42:33.853Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Operational briefing on Operation Shadow Breach (CYB-2026-0481). Combines maritime registry logs, cryptocurrency liquidity dispersion, burner cellular intercepts, and community modularity clustering.",
+    "facts": [
+      {
+        "id": "FACT-101",
+        "category": "PORT_CUSTOMS",
+        "statement": "Rotterdam Port Authority container inspection seized illicit manifest discrepancy matching vessel MV Northern Star registered to Aura Logistics Ltd.",
+        "sourceProvenance": "Customs Inspection Notice #8912-A & Bill of Lading",
+        "verificationLevel": "LAW_ENFORCEMENT_FILING",
+        "evidenceId": "EVD-0142-01",
+        "timestamp": "2026-05-12T08:30:00Z"
+      },
+      {
+        "id": "FACT-102",
+        "category": "BLOCKCHAIN_LEDGER",
+        "statement": "320,000 USDT transferred from PanGlobal Trading treasury wallet to mixer deposit contract 0x7F...44b within 180 seconds of vessel docking.",
+        "sourceProvenance": "Etherscan MLAT Subpoena Record Digest #44b",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-04",
+        "timestamp": "2026-05-12T09:14:00Z"
+      },
+      {
+        "id": "FACT-103",
+        "category": "TELECOM_CDR",
+        "statement": "Burner mobile number +1 (555) 019-2834 logged 27 encrypted sessions with Viktor R. (TARGET-01) from maritime tower sector 4B.",
+        "sourceProvenance": "Telecom Tower Intercept Dump Sector 4B",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-02",
+        "timestamp": "2026-05-12T10:05:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "7 Nodes / 7 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "TARGET-01 (Viktor R.): Score 0.942",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "$320,000 USDT dissipated in 180 sec",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Cross-referencing maritime arrival logs with blockchain transaction velocity indicates an orchestrated off-ramp mechanism coinciding with cargo handover windows.",
+        "groundedEntities": [
+          "Viktor R. (TARGET-01)",
+          "Crypto Vault 0x7F...44b",
+          "Aura Logistics Ltd"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "PanGlobal Trading",
+          "Limassol Registry"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "CLUE-DEMO-01",
+        "title": "Unverified Informant Tip - Vehicle Spotted Near Withdrawal Point",
+        "description": "Local surveillance observer reported dark sedan idling outside ATM booth during withdrawal window.",
+        "author": "Duty Officer, PS Cyber South-West",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T03:42:33.853Z"
+      }
+    ],
+    "digestHash": "ec16c2abda631f65a34c814e4d95d1bdf72b60c4711dd8148cc9658624b86728",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Transmit judicial assistance request (MLAT) to Cypriot maritime registry for beneficial ownership disclosure of Aura Logistics Ltd.",
+      "Request exchange telemetry on deposit wallet 0x7F...44b to trace off-ramp fiat accounts.",
+      "Deploy perimeter ANPR surveillance at Dock Warehouse #4 for registered transport plates."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 3,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRZIT-660",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-3087",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:16.565Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:16.565Z"
+      }
+    ],
+    "digestHash": "b4a8b4552ba6daf0832629227866282fbc47d39e05ba2d72c8a16e0593719fed",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRUHH-849",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-2063",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:10.037Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:10.037Z"
+      }
+    ],
+    "digestHash": "52771c695f95afd3e2488e0ce23c837d549999618ea384b5063cf8796f6d7045",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRTLA-547",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8786",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:08.878Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:08.878Z"
+      }
+    ],
+    "digestHash": "15071e208c75a8ba8510c4a18073c230622dab03d1693281e28edc2fa2fe548a",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRSSL-450",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8537",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:07.845Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:07.845Z"
+      }
+    ],
+    "digestHash": "c663bc2f0e4608f265f9c8c77e0806a1700c1ead902f95db1882aaa06642475e",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRR8N-858",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-1153",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:05.831Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:05.831Z"
+      }
+    ],
+    "digestHash": "4e4fb1454669b856a5dc917f4f79bcf7418223e426aa706a03e921148aa399bd",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGRO0W-916",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8527",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:13:01.664Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:13:01.664Z"
+      }
+    ],
+    "digestHash": "64a99c0b222cc04fccb1e1cfa2e582f48e5de937e73992125b17cb07aa289840",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQY3H-804",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-5823",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:28.061Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:28.061Z"
+      }
+    ],
+    "digestHash": "085412bea22421d36cd4fb81575331e6686121e020621569a930f47ef109f6c7",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQX5Y-566",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-5711",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:26.854Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:26.854Z"
+      }
+    ],
+    "digestHash": "5dda4f024a669d6c688890e1283eaeb2357f5a0a539227086ce924d0682d204a",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQWHZ-994",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8529",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:25.991Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:25.991Z"
+      }
+    ],
+    "digestHash": "79ff61acdccc54e6e8cc0cd7657996983f1c5be7266f1590d04d8047a8f2bdaa",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQVS0-163",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-7924",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:25.056Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:25.056Z"
+      }
+    ],
+    "digestHash": "6896b668f3c75de64f62604c8c9755e29b5bf0fd1ce1474697dd1163e21696fe",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQTYG-947",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-7186",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:22.696Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:22.696Z"
+      }
+    ],
+    "digestHash": "87a1456e9fb44452cbc8c361d24e5e6f7d27c48cdedfc1919b997fd5337b7464",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQHMX-140",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8070",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER AI Intelligence Report",
+    "title": "CIPHER AI Intelligence Report: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:06.729Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:06.729Z"
+      }
+    ],
+    "digestHash": "10d97c9712ddc871953eb8dce349e8a52dc4a7863ee51bad93e15c491a62bd78",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQH3T-240",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-4649",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Evidence Summary",
+    "title": "CIPHER Evidence Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:06.041Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:06.041Z"
+      }
+    ],
+    "digestHash": "6bbea5819f73fef95de094bb45d9dd13852cc0e9033d2f48ee081969f14ffad2",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQGFC-510",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-2818",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Timeline Summary",
+    "title": "CIPHER Timeline Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:05.160Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:05.160Z"
+      }
+    ],
+    "digestHash": "8490e243af76e6eaf0e99e4d1ce30d79187e954eddc50b18622903b6eebaeb6a",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQFJG-843",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-6415",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Entity Profile",
+    "title": "CIPHER Entity Profile: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:12:04.012Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:12:04.012Z"
+      }
+    ],
+    "digestHash": "3e62d76a39ab23f00ceb86f98c1c729518348e2b2c906b20333793872600a132",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQC3T-731",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-8497",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:59.561Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:59.561Z"
+      }
+    ],
+    "digestHash": "4ce3a75f96d02f1e1ad84ab1a1ff87761a450d892746f0605afc534a0c4611ca",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQBI1-233",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-7647",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:58.778Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:58.777Z"
+      }
+    ],
+    "digestHash": "2761228f9d5eb094b52bf1aab04a84c3b2cc7ca533ed17144bce0ade57a70410",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQAAI-801",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-2706",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:57.210Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:57.210Z"
+      }
+    ],
+    "digestHash": "bba6947422ea10f797a45aacafdef13d80b9067c5b6c9884bc07238fd47ec59f",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQ8GF-767",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-9543",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:54.831Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:54.831Z"
+      }
+    ],
+    "digestHash": "605c12bb760c6b3f7846ef957b05a97eae0ca6736d495cf78313b1f2b3a46d3f",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQ7KG-915",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-7414",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Entity Profile",
+    "title": "CIPHER Entity Profile: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:53.680Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:53.680Z"
+      }
+    ],
+    "digestHash": "8870a057c7f3da58e2fafe6312b8c6282c5460a9c80a0aa9dd1f8bdbba534ba4",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGQ5YM-192",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-4461",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Network Analysis",
+    "title": "CIPHER Network Analysis: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:51.598Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:51.598Z"
+      }
+    ],
+    "digestHash": "80172965adbf4b334af44a1db0c2811bcd655c15e1bd0f69346a1ce2f2209931",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGPVBY-143",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-9788",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:37.822Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:37.822Z"
+      }
+    ],
+    "digestHash": "21536c1f4c6d7ec4a15d0b6fb8fe756fd72a761f933bc4da67b40aa3ad262b06",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTTGPVBT-825",
+    "reportNumber": "CIPHER-JUDICIAL-CASE-2025-004-3786",
+    "caseId": "CASE-2025-004",
+    "caseTitle": "State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: State v. Sahil Khan (Cyber South-West FIR 4/2025)",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-09T02:11:37.817Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Comprehensive judicial briefing on FIR No. 4/2025 (PS Cyber South-West Delhi). Synthesizes court findings from Delhi High Court order dated 14 Jan 2026, call detail telemetry, multi-state mule account transfers totaling ₹26,00,000, and graph betweenness metrics.",
+    "facts": [
+      {
+        "id": "FACT-001",
+        "category": "JUDICIAL_RECORD",
+        "statement": "FIR No. 4/2025 registered at Cyber South-West Police Station under Sections 318(4), 316(2), 61(2) BNS following complainant victim's account siphoning of ₹26,00,000.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Bail Appl. 3788/2025, Para 2",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-COURT-001",
+        "timestamp": "2025-01-15T11:00:00Z"
+      },
+      {
+        "id": "FACT-002",
+        "category": "FORENSIC_TELECOM",
+        "statement": "Mobile handset Samsung SM-M315F IMEI 354891002348910 operated SIM +91 98290 12345 registered to Sahil Khan, geotagged at ATM withdrawal cluster during transaction dispersal window.",
+        "sourceProvenance": "State Police Status Report & CDR Tower Intercept Sector 8 Jaipur",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-CDR-004",
+        "timestamp": "2025-01-15T15:42:00Z"
+      },
+      {
+        "id": "FACT-003",
+        "category": "FINANCIAL_LEDGER",
+        "statement": "₹14,00,000 debited directly from victim savings account into primary mule layer (PNB Acc 4829100234), followed by ₹12,00,000 premature FD liquidation.",
+        "sourceProvenance": "Punjab National Bank & State Bank of India Core Banking Transaction Audit",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-BANK-002",
+        "timestamp": "2025-01-15T14:10:00Z"
+      },
+      {
+        "id": "FACT-004",
+        "category": "JUDICIAL_FINDING",
+        "statement": "Hon'ble Delhi High Court dismissed anticipatory bail application of Sahil Khan noting uncooperative conduct and custodial interrogation requirement.",
+        "sourceProvenance": "Delhi High Court Order (14 Jan 2026), Para 18",
+        "verificationLevel": "COURT_RECORDED",
+        "evidenceId": "EVD-ORDER-001",
+        "timestamp": "2026-01-14T16:30:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "49 Nodes / 50 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "PERSON-001 (Sahil Khan): Score 0.884",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "₹26,00,000 dissipated in 48 min",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Correlated telecom timestamps and ATM camera feeds suggest the withdrawal team operated in synchronized windows across Jaipur and Alwar to maximize cash extraction before bank freeze orders.",
+        "groundedEntities": [
+          "Sahil Khan (PERSON-001)",
+          "Mule Account #1 (ACC-001)",
+          "ATM Sector 8 Jaipur"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "ACC-002 (Secondary Mule)",
+          "ACC-003"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mttgl9ih-rmc",
+        "title": "CCTV footage",
+        "description": "CCTV footage from a house near the bank",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-09T02:11:37.817Z"
+      }
+    ],
+    "digestHash": "fbedd4f564385d85f5b2728f4e9bef2daccdda9f06e43f1f52a596ee21beef44",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Issue Section 91 CrPC notices to telecom service providers for cellular tower dump analysis around Sector 8 Jaipur.",
+      "Request certified CCTV footage preservation from ATM kiosks corresponding to withdrawal timestamps 15:42 to 16:30.",
+      "Direct nationalized banks to place debit freezes on identified tier-2 mule accounts.",
+      "Schedule formal forensic extraction of mobile handset SM-M315F upon custody."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 4,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 1
+    }
+  },
+  {
+    "id": "REP-MTSZQH6T-627",
+    "reportNumber": "CIPHER-JUDICIAL-INV-2026-0142-4281",
+    "caseId": "INV-2026-0142",
+    "caseTitle": "Operation Nexus",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: Operation Nexus",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-08T18:16:12.677Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Operational briefing on Operation Nexus (INV-2026-0142). Combines maritime registry logs, cryptocurrency liquidity dispersion, burner cellular intercepts, and community modularity clustering.",
+    "facts": [
+      {
+        "id": "FACT-101",
+        "category": "PORT_CUSTOMS",
+        "statement": "Rotterdam Port Authority container inspection seized illicit manifest discrepancy matching vessel MV Northern Star registered to Aura Logistics Ltd.",
+        "sourceProvenance": "Customs Inspection Notice #8912-A & Bill of Lading",
+        "verificationLevel": "LAW_ENFORCEMENT_FILING",
+        "evidenceId": "EVD-0142-01",
+        "timestamp": "2026-05-12T08:30:00Z"
+      },
+      {
+        "id": "FACT-102",
+        "category": "BLOCKCHAIN_LEDGER",
+        "statement": "320,000 USDT transferred from PanGlobal Trading treasury wallet to mixer deposit contract 0x7F...44b within 180 seconds of vessel docking.",
+        "sourceProvenance": "Etherscan MLAT Subpoena Record Digest #44b",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-04",
+        "timestamp": "2026-05-12T09:14:00Z"
+      },
+      {
+        "id": "FACT-103",
+        "category": "TELECOM_CDR",
+        "statement": "Burner mobile number +1 (555) 019-2834 logged 27 encrypted sessions with Viktor R. (TARGET-01) from maritime tower sector 4B.",
+        "sourceProvenance": "Telecom Tower Intercept Dump Sector 4B",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-02",
+        "timestamp": "2026-05-12T10:05:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "12 Nodes / 14 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "TARGET-01 (Viktor R.): Score 0.942",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "$320,000 USDT dissipated in 180 sec",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Cross-referencing maritime arrival logs with blockchain transaction velocity indicates an orchestrated off-ramp mechanism coinciding with cargo handover windows.",
+        "groundedEntities": [
+          "Viktor R. (TARGET-01)",
+          "Crypto Vault 0x7F...44b",
+          "Aura Logistics Ltd"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "PanGlobal Trading",
+          "Limassol Registry"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mtsul4s8-xck",
+        "title": "dfhvhv",
+        "description": "wbjdc",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-08T18:16:12.677Z"
+      },
+      {
+        "id": "clue-mtswb9m0-ivp",
+        "title": "Final",
+        "description": "FHfsj",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-08T18:16:12.677Z"
+      }
+    ],
+    "digestHash": "0d6e830273ac4c6142782a41066fe2657c5699e9fde16c38f60b19f1f4211533",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Transmit judicial assistance request (MLAT) to Cypriot maritime registry for beneficial ownership disclosure of Aura Logistics Ltd.",
+      "Request exchange telemetry on deposit wallet 0x7F...44b to trace off-ramp fiat accounts.",
+      "Deploy perimeter ANPR surveillance at Dock Warehouse #4 for registered transport plates."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 3,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 2
+    }
+  },
+  {
+    "id": "REP-MTSZQH6O-651",
+    "reportNumber": "CIPHER-JUDICIAL-INV-2026-0142-6467",
+    "caseId": "INV-2026-0142",
+    "caseTitle": "Operation Nexus",
+    "reportType": "CIPHER Investigation Summary",
+    "title": "CIPHER Investigation Summary: Operation Nexus",
+    "generatedBy": "Amit Sharma",
+    "analystRole": "INVESTIGATOR",
+    "generatedAt": "2026-09-08T18:16:12.672Z",
+    "classification": "OFFICIAL LAW ENFORCEMENT INTELLIGENCE // PROSECUTION BRIEF",
+    "executiveSummary": "Operational briefing on Operation Nexus (INV-2026-0142). Combines maritime registry logs, cryptocurrency liquidity dispersion, burner cellular intercepts, and community modularity clustering.",
+    "facts": [
+      {
+        "id": "FACT-101",
+        "category": "PORT_CUSTOMS",
+        "statement": "Rotterdam Port Authority container inspection seized illicit manifest discrepancy matching vessel MV Northern Star registered to Aura Logistics Ltd.",
+        "sourceProvenance": "Customs Inspection Notice #8912-A & Bill of Lading",
+        "verificationLevel": "LAW_ENFORCEMENT_FILING",
+        "evidenceId": "EVD-0142-01",
+        "timestamp": "2026-05-12T08:30:00Z"
+      },
+      {
+        "id": "FACT-102",
+        "category": "BLOCKCHAIN_LEDGER",
+        "statement": "320,000 USDT transferred from PanGlobal Trading treasury wallet to mixer deposit contract 0x7F...44b within 180 seconds of vessel docking.",
+        "sourceProvenance": "Etherscan MLAT Subpoena Record Digest #44b",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-04",
+        "timestamp": "2026-05-12T09:14:00Z"
+      },
+      {
+        "id": "FACT-103",
+        "category": "TELECOM_CDR",
+        "statement": "Burner mobile number +1 (555) 019-2834 logged 27 encrypted sessions with Viktor R. (TARGET-01) from maritime tower sector 4B.",
+        "sourceProvenance": "Telecom Tower Intercept Dump Sector 4B",
+        "verificationLevel": "VERIFIED_EVIDENCE",
+        "evidenceId": "EVD-0142-02",
+        "timestamp": "2026-05-12T10:05:00Z"
+      }
+    ],
+    "analytics": [
+      {
+        "metricName": "Network Density & Connectivity",
+        "computedValue": "12 Nodes / 14 Relational Edges",
+        "methodology": "Adjacency Matrix Analysis & Multi-Hop Traversal",
+        "significance": "Demonstrates high degree of coordination between mule accounts, communication nodes, and field withdrawal agents."
+      },
+      {
+        "metricName": "Betweenness Centrality Peak",
+        "computedValue": "TARGET-01 (Viktor R.): Score 0.942",
+        "methodology": "Brandes Shortest Path Betweenness Algorithm",
+        "significance": "Identifies the key structural bridge through which information, funds, or operational directives transit within the network."
+      },
+      {
+        "metricName": "Community Modularity (Louvain Q)",
+        "computedValue": "Q = 0.68 (3 Distinct Clusters)",
+        "methodology": "Louvain Modularity Cluster Optimization",
+        "significance": "Segregates the criminal architecture into functional compartments: (1) Technical Fraud/Phishing, (2) Mule Banking Layer, (3) Cash Extraction/Laundering."
+      },
+      {
+        "metricName": "Financial Dispersal Velocity",
+        "computedValue": "$320,000 USDT dissipated in 180 sec",
+        "methodology": "Time-Windowed Outflow Aggregation",
+        "significance": "Rapid dissipation indicates pre-arranged mule infrastructure with automated or standby withdrawal teams."
+      }
+    ],
+    "aiInterpretation": [
+      {
+        "hypothesisId": "AI-HYP-01",
+        "title": "Potential Synergistic Multi-State Extraction Pattern",
+        "interpretiveSummary": "Cross-referencing maritime arrival logs with blockchain transaction velocity indicates an orchestrated off-ramp mechanism coinciding with cargo handover windows.",
+        "groundedEntities": [
+          "Viktor R. (TARGET-01)",
+          "Crypto Vault 0x7F...44b",
+          "Aura Logistics Ltd"
+        ],
+        "caveat": "CIPHER Responsible AI Note: This deduction represents automated algorithmic pattern correlation and investigative hypothesis. It does not establish legal guilt or individual culpability without human corroboration.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      },
+      {
+        "hypothesisId": "AI-HYP-02",
+        "title": "Identified Investigative Lead: Second-Hop Mule Accounts",
+        "interpretiveSummary": "Secondary bank statements reveal fractional transfers routed to unverified regional cooperative banks that warrant expedited section 91 CrPC / BNSS summons.",
+        "groundedEntities": [
+          "PanGlobal Trading",
+          "Limassol Registry"
+        ],
+        "caveat": "CIPHER Responsible AI Note: Requires human forensic verification with originating financial clearinghouses prior to judicial filing.",
+        "humanVerificationStatus": "REQUIRES_HUMAN_VERIFICATION"
+      }
+    ],
+    "userClues": [
+      {
+        "id": "clue-mtsul4s8-xck",
+        "title": "dfhvhv",
+        "description": "wbjdc",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-08T18:16:12.672Z"
+      },
+      {
+        "id": "clue-mtswb9m0-ivp",
+        "title": "Final",
+        "description": "FHfsj",
+        "author": "Lead Intelligence Analyst",
+        "status": "USER PROVIDED / UNVERIFIED",
+        "createdAt": "2026-09-08T18:16:12.672Z"
+      }
+    ],
+    "digestHash": "974fa70b06b0401f868167f816c11ddcb340d9953c747a3cc7842a7d7db04bf6",
+    "signatureAlgorithm": "ECDSA-P256-SHA256 // CIPHER-HARDENED-VAULT",
+    "recommendations": [
+      "Transmit judicial assistance request (MLAT) to Cypriot maritime registry for beneficial ownership disclosure of Aura Logistics Ltd.",
+      "Request exchange telemetry on deposit wallet 0x7F...44b to trace off-ramp fiat accounts.",
+      "Deploy perimeter ANPR surveillance at Dock Warehouse #4 for registered transport plates."
+    ],
+    "provenanceCitations": {
+      "totalFacts": 3,
+      "totalAnalytics": 4,
+      "totalAiDeductions": 2,
+      "totalUserClues": 2
+    }
+  }
+]

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05070b;
+  --foreground: #f5f7fa;
+  --surface-1: #101722;
+  --surface-2: #121a26;
+  --surface-3: #151e2b;
+  --border-color: #1e2a3b;
+  --border-subtle: #162233;
+  --accent-red: #ff3b30;
+  --accent-red-hover: #ff453a;
+  --accent-cyan: #39d9ff;
+  --accent-teal: #22d3ee;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+body {
+  background: #05070b;
+  color: #f5f7fa;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080b12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2a3b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3d56;
+}
+
+/* Intelligence Glow & Accent Utilities */
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(255, 59, 48, 0.6);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 16px rgba(57, 217, 255, 0.5);
+}
+
+.btn-red-glow {
+  background: linear-gradient(135deg, #ff453a 0%, #e02828 100%);
+  box-shadow: 0 4px 18px -2px rgba(255, 69, 58, 0.45);
+  transition: all 0.2s ease-in-out;
+}
+.btn-red-glow:hover {
+  background: linear-gradient(135deg, #ff574d 0%, #f03232 100%);
+  box-shadow: 0 6px 24px 0px rgba(255, 69, 58, 0.65);
+  transform: translateY(-1px);
+}
+
+.card-nexus,
+.card-cipher {
+  background: #101722;
+  border: 1px solid #1e2a3b;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-nexus:hover,
+.card-cipher:hover {
+  border-color: rgba(255, 59, 48, 0.45);
+  box-shadow: 0 10px 30px -5px rgba(255, 59, 48, 0.12), 0 0 1px 1px rgba(255, 59, 48, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-nexus-cyan:hover,
+.card-cipher-cyan:hover {
+  border-color: rgba(57, 217, 255, 0.5);
+  box-shadow: 0 10px 30px -5px rgba(57, 217, 255, 0.14), 0 0 1px 1px rgba(57, 217, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.radar-grid {
+  background-image: 
+    radial-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(21, 30, 43, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(21, 30, 43, 0.4) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px, 80px 80px;
+}
+
+.digital-overlay {
+  background-image: radial-gradient(rgba(255, 59, 48, 0.2) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.stepper-glow {
+  box-shadow: 0 0 14px rgba(255, 59, 48, 0.5);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.02); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}

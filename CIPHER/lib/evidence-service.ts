@@ -1,0 +1,377 @@
+import fs from "fs";
+import path from "path";
+
+export interface EvidenceExhibit {
+  id: string;
+  name: string;
+  type: string;
+  source: string;
+  sourceUrl?: string;
+  date: string;
+  relatedEntity?: string;
+  relatedCase: string;
+  status: "verified" | "pending";
+  sha256: string;
+  size: string;
+  description: string;
+  linkedPeople: string[];
+  linkedPhones: string[];
+  linkedAccounts: string[];
+  linkedLocations: string[];
+  linkedEvents: string[];
+  provenance: "COURT_RECORDED" | "INVESTIGATIVE_MATERIAL" | "DEMO_SYNTHETIC" | "AI_INFERENCE" | "UNKNOWN";
+  verificationStatus: "Verified Judicial Record" | "Forensic Integrity Verified" | "Investigative Working Copy" | "Pending Subpoena";
+  createdAt: string;
+}
+
+const DATA_DIR = path.join(process.cwd(), "data");
+const EVIDENCE_FILE = path.join(DATA_DIR, "evidence.json");
+
+const SEED_EVIDENCE: EvidenceExhibit[] = [
+  // CASE-2025-004 Exhibits
+  {
+    id: "EVIDENCE-COURT-001",
+    name: "Delhi High Court Order — Sahil Khan",
+    type: "COURT DOCUMENT",
+    source: "Delhi High Court",
+    sourceUrl: "https://indiankanoon.org/doc/12999253/",
+    date: "14 January 2026",
+    relatedEntity: "Sahil Khan (PERSON-001) / State Govt. of NCT of Delhi",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+    size: "420 KB (Official PDF)",
+    description: "Official Delhi High Court order dismissing applicant Sahil Khan's anticipatory bail application in FIR 4/2025 PS Cyber South-West Delhi. Records investigative findings connecting applicant via bank accounts (>₹5L credit), ATM CCTV identification, Cell-ID tower records, and co-accused disclosures.",
+    linkedPeople: ["Sahil Khan (PERSON-001)", "Sajid Khan (PERSON-002)", "Narendra Kumar (PERSON-003)", "Sabir Khan (PERSON-004)", "Victim (PERSON-005)"],
+    linkedPhones: ["+91-9871234001 (PHONE-001)"],
+    linkedAccounts: ["Sahil Khan Acct XXXXXX4408 (ACCOUNT-006)", "Victim Savings XXXXXX5012 (ACCOUNT-001)"],
+    linkedLocations: ["Jaipur, Rajasthan (LOC-002)", "Alwar, Rajasthan (LOC-003)", "Delhi (LOC-001)"],
+    linkedEvents: ["EVENT-022", "EVENT-023", "EVENT-024"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Verified Judicial Record",
+    createdAt: "2026-01-14T17:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-001",
+    name: "ATM CCTV Footage (Jaipur Kiosk Cash Extractions)",
+    type: "CCTV",
+    source: "Bank Surveillance Server / Cyber Forensics Lab",
+    date: "January 2025",
+    relatedEntity: "Sahil Khan (PERSON-001) / ATM Jaipur",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "6c28f09b552b9b7e7c5b9687d60f992a5482e9b88cf15a6b0cfa0b3294c7b801",
+    size: "1.4 GB (Export Package)",
+    description: "ATM CCTV referenced in court record — source document available. Footage collected during investigation. The court record discusses identification of Sahil Khan and other individuals in CCTV relating to withdrawal of cheated amounts.",
+    linkedPeople: ["Sahil Khan (PERSON-001)", "Sajid Khan (PERSON-002)", "Narendra Kumar (PERSON-003)"],
+    linkedPhones: ["+91-9871234001 (PHONE-001)"],
+    linkedAccounts: ["Mule Acct XXXXXX3341 (ACCOUNT-003)"],
+    linkedLocations: ["ATM Unit - Jaipur (ATM-001)", "Jaipur, Rajasthan (LOC-002)"],
+    linkedEvents: ["EVENT-013", "EVENT-014", "EVENT-015"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Forensic Integrity Verified",
+    createdAt: "2025-01-16T12:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-BANK-001",
+    name: "HDFC Bank Statement & KYC Audit (Complainant & Mules)",
+    type: "BANK RECORD",
+    source: "HDFC Bank Law Enforcement Subpoena Compliance",
+    date: "January 2025",
+    relatedEntity: "Victim (PERSON-005) / HDFC Bank",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "31846b8f10689b9d363ef808b2611a91e4a30e7fd48be7495b45041a87e4922e",
+    size: "8.6 MB (Audit Dossier)",
+    description: "Certified banking statements establishing initial unauthorized debit of ₹14 lakh from HDFC savings account XXXXXX5012, followed by unauthorized liquidation of linked fixed-deposits XXXXXX9821 totaling ₹26 lakh cumulative fraud loss.",
+    linkedPeople: ["Victim (PERSON-005)"],
+    linkedPhones: ["+91-9810987005 (PHONE-002)"],
+    linkedAccounts: ["Victim Savings (ACCOUNT-001)", "Victim FD (ACCOUNT-002)", "Mule RJ (ACCOUNT-003)", "Mule BR (ACCOUNT-004)"],
+    linkedLocations: ["Delhi (LOC-001)", "Rajasthan (LOC-002)", "Bihar (LOC-004)"],
+    linkedEvents: ["EVENT-006", "EVENT-007", "EVENT-008", "EVENT-009", "EVENT-010"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Verified Judicial Record",
+    createdAt: "2025-01-12T15:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-BANK-002",
+    name: "Sahil Khan Bank Account Credit Audit (> ₹5 Lakh)",
+    type: "BANK RECORD",
+    source: "Investigation Subpoena / Delhi Cyber South-West",
+    date: "January 2025",
+    relatedEntity: "Sahil Khan (PERSON-001)",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "8e27c191a4b92b67f1850129034d619a93ef07a149b109e2a87401948529e81b",
+    size: "4.2 MB (Certified Report)",
+    description: "Investigation record cited in Delhi High Court order confirming that more than ₹5 lakh was credited to applicant Sahil Khan's bank account (ACCOUNT-006) during the relevant period from the identified cyber-fraud mule network.",
+    linkedPeople: ["Sahil Khan (PERSON-001)"],
+    linkedPhones: ["+91-9871234001 (PHONE-001)"],
+    linkedAccounts: ["Sahil Khan Acct XXXXXX4408 (ACCOUNT-006)", "Mule RJ (ACCOUNT-003)", "Mule BR (ACCOUNT-004)"],
+    linkedLocations: ["Rajasthan (LOC-002)", "Delhi (LOC-001)"],
+    linkedEvents: ["EVENT-017", "EVENT-018"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Verified Judicial Record",
+    createdAt: "2025-01-21T18:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-CDR-001",
+    name: "Cell-ID & Mobile Location Telemetry (Jaipur & Alwar)",
+    type: "CDR",
+    source: "Telecom Regulatory Intercept & Cell Tower Dump",
+    date: "January 2025",
+    relatedEntity: "Sahil Khan (PERSON-001) / CELL-001 / CELL-002",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "904b7e1934001ab928471e9204859a1b4901928475a892019284750192837461",
+    size: "14.8 MB (CSV / GeoJSON)",
+    description: "Telecom-derived location / tower-area indication. High Court order discusses mobile/tower-location evidence concerning applicant in Jaipur and Alwar coinciding with timing of ATM cash extractions.",
+    linkedPeople: ["Sahil Khan (PERSON-001)"],
+    linkedPhones: ["+91-9871234001 (PHONE-001)"],
+    linkedAccounts: [],
+    linkedLocations: ["CELL-001 (Jaipur)", "CELL-002 (Alwar)", "Jaipur, Rajasthan (LOC-002)", "Alwar, Rajasthan (LOC-003)"],
+    linkedEvents: ["EVENT-011", "EVENT-020"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Forensic Integrity Verified",
+    createdAt: "2025-01-25T14:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-010",
+    name: "Disclosure Statement of Co-Accused Sajid Khan",
+    type: "DISCLOSURE STATEMENT",
+    source: "Cyber South-West Police Station Interrogation Log",
+    date: "January 2025",
+    relatedEntity: "Sajid Khan (PERSON-002) → Sahil Khan (PERSON-001)",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "55a10984b2e819a0491827364501928475610293847561029384756102938475",
+    size: "1.1 MB (Statement Dossier)",
+    description: "Investigative statement connection: Sahil Khan's name surfaced during investigation through disclosure material of co-accused Sajid Khan. Labeled: Investigative statement connection, NOT proof of guilt.",
+    linkedPeople: ["Sajid Khan (PERSON-002)", "Sahil Khan (PERSON-001)"],
+    linkedPhones: ["+91-9871234002 (PHONE-003)"],
+    linkedAccounts: ["Sahil Khan Acct XXXXXX4408 (ACCOUNT-006)"],
+    linkedLocations: ["Mewat (LOC-006)", "Jaipur, Rajasthan (LOC-002)"],
+    linkedEvents: ["EVENT-016"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Investigative Working Copy",
+    createdAt: "2025-01-19T16:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-011",
+    name: "Disclosure Statement of Co-Accused Narendra Kumar",
+    type: "DISCLOSURE STATEMENT",
+    source: "Cyber South-West Police Station Interrogation Log",
+    date: "January 2025",
+    relatedEntity: "Narendra Kumar (PERSON-003) → Sahil Khan (PERSON-001)",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "77c9019284756102938475610293847561029384756102938475610293847561",
+    size: "1.2 MB (Statement Dossier)",
+    description: "Investigative statement connection: Co-accused Narendra Kumar statement linking Sahil Khan to ATM cash withdrawal operations and mule account logistics.",
+    linkedPeople: ["Narendra Kumar (PERSON-003)", "Sahil Khan (PERSON-001)"],
+    linkedPhones: ["+91-9871234003 (PHONE-004)"],
+    linkedAccounts: ["Mule Acct XXXXXX3341 (ACCOUNT-003)"],
+    linkedLocations: ["Jaipur, Rajasthan (LOC-002)"],
+    linkedEvents: ["EVENT-016"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Investigative Working Copy",
+    createdAt: "2025-01-19T18:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-012",
+    name: "Disclosure Statement of Co-Accused Sabir Khan",
+    type: "DISCLOSURE STATEMENT",
+    source: "Cyber South-West Police Station Interrogation Log",
+    date: "January 2025",
+    relatedEntity: "Sabir Khan (PERSON-004) → Sahil Khan (PERSON-001)",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "88d0192847561029384756102938475610293847561029384756102938475610",
+    size: "980 KB (Statement Dossier)",
+    description: "Investigative statement connection: Co-accused Sabir Khan disclosure concerning regional interstate fraud syndicate operations.",
+    linkedPeople: ["Sabir Khan (PERSON-004)", "Sahil Khan (PERSON-001)"],
+    linkedPhones: ["+91-9871234004 (PHONE-005)"],
+    linkedAccounts: [],
+    linkedLocations: ["Rajasthan (LOC-003)", "Mewat (LOC-006)"],
+    linkedEvents: ["EVENT-016"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Investigative Working Copy",
+    createdAt: "2025-01-19T20:00:00.000Z",
+  },
+  {
+    id: "EVIDENCE-NCRP-001",
+    name: "National Cybercrime Reporting Portal (NCRP) Cross-Case Link Record",
+    type: "NCRP RECORD",
+    source: "NCRP Inter-Agency Portal / MHA",
+    date: "January 2025",
+    relatedEntity: "Sahil Khan Acct XXXXXX4408 (NCRP-001/002/003)",
+    relatedCase: "CASE-2025-004",
+    status: "verified",
+    sha256: "1948572019485720194857201948572019485720194857201948572019485720",
+    size: "2.4 MB (Dossier Extract)",
+    description: "Cross-case investigative link: Court record states applicant's bank account (ACCOUNT-006) had appeared in multiple cyber-fraud complaints reported through NCRP (caseReference: NCRP-REFERENCE-NOT-DISCLOSED).",
+    linkedPeople: ["Sahil Khan (PERSON-001)"],
+    linkedPhones: [],
+    linkedAccounts: ["Sahil Khan Acct XXXXXX4408 (ACCOUNT-006)"],
+    linkedLocations: ["Interstate / Multi-Jurisdiction"],
+    linkedEvents: ["EVENT-019"],
+    provenance: "COURT_RECORDED",
+    verificationStatus: "Verified Judicial Record",
+    createdAt: "2025-01-23T16:00:00.000Z",
+  },
+
+  // Operation Nexus Exhibits
+  {
+    id: "EVD-0142-01",
+    name: "Rotterdam Docks CCTV Footage Cam #12",
+    type: "CCTV",
+    source: "Port Authority Perimeter Server",
+    date: "May 15, 2026 - 22:40 UTC",
+    relatedEntity: "Black SUV (TX-89) / Courier Mark",
+    relatedCase: "INV-2026-0142",
+    status: "verified",
+    sha256: "a3f8c92b419800e1284d720bcf884ef19047261a8b",
+    size: "2.1 GB",
+    description: "High-definition night vision capture of vehicle entering unauthorized warehouse bay.",
+    linkedPeople: ["Courier Mark V.", "Alexei M."],
+    linkedPhones: [],
+    linkedAccounts: [],
+    linkedLocations: ["Rotterdam Docks Warehouse #4"],
+    linkedEvents: ["EVT-03"],
+    provenance: "INVESTIGATIVE_MATERIAL",
+    verificationStatus: "Forensic Integrity Verified",
+    createdAt: "2026-05-15T23:00:00.000Z",
+  },
+  {
+    id: "EVD-0142-02",
+    name: "Seized iPhone 14 Pro Physical Extraction",
+    type: "IMEI",
+    source: "Raid Warrant Seizure (Quay 14)",
+    date: "May 18, 2026 - 06:12 UTC",
+    relatedEntity: "Alexei M. (Target-02)",
+    relatedCase: "INV-2026-0142",
+    status: "verified",
+    sha256: "7b1029c488301fa9102741829bb882901a88274100",
+    size: "48.2 GB",
+    description: "Complete bitstream disk image, deleted Signal chats, and contacts export.",
+    linkedPeople: ["Alexei M."],
+    linkedPhones: ["+1 (555) 019-2834"],
+    linkedAccounts: [],
+    linkedLocations: ["Quayside Berth 14"],
+    linkedEvents: ["EVT-04"],
+    provenance: "INVESTIGATIVE_MATERIAL",
+    verificationStatus: "Forensic Integrity Verified",
+    createdAt: "2026-05-18T08:00:00.000Z",
+  },
+  {
+    id: "EVD-0142-03",
+    name: "Offshore Wire Subpoena Bank of Nicosia",
+    type: "BANK RECORD",
+    source: "Judicial Mutual Legal Assistance (MLAT)",
+    date: "May 20, 2026 - 11:30 UTC",
+    relatedEntity: "Aura Logistics Holding Ltd",
+    relatedCase: "INV-2026-0142",
+    status: "verified",
+    sha256: "44e281ad901048187261552a4819001b9182749182",
+    size: "14.5 MB",
+    description: "Notarized SWIFT transaction confirmation slips and corporate beneficial ownership disclosures.",
+    linkedPeople: ["Elena Rostova", "Viktor R."],
+    linkedPhones: [],
+    linkedAccounts: ["Bank of Nicosia Acct #9042"],
+    linkedLocations: ["Nicosia, Cyprus"],
+    linkedEvents: ["EVT-02"],
+    provenance: "INVESTIGATIVE_MATERIAL",
+    verificationStatus: "Verified Judicial Record",
+    createdAt: "2026-05-20T14:00:00.000Z",
+  },
+  {
+    id: "EVD-0142-04",
+    name: "Cell Tower Sector Raw Call Detail Records",
+    type: "CDR",
+    source: "Telecom Provider Subpoena",
+    date: "May 21, 2026 - 15:00 UTC",
+    relatedEntity: "+1 (555) 019-2834 (Viktor R.)",
+    relatedCase: "INV-2026-0142",
+    status: "pending",
+    sha256: "918273645019284756102938475610293847561029",
+    size: "182.4 MB",
+    description: "48 hours of raw tower handshakes, IMEI registrations, and signal strength azimuth logs.",
+    linkedPeople: ["Viktor R."],
+    linkedPhones: ["+1 (555) 019-2834"],
+    linkedAccounts: [],
+    linkedLocations: ["Rotterdam Sector 4B"],
+    linkedEvents: ["EVT-01"],
+    provenance: "INVESTIGATIVE_MATERIAL",
+    verificationStatus: "Pending Subpoena",
+    createdAt: "2026-05-21T16:00:00.000Z",
+  },
+];
+
+function ensureEvidenceFile(): void {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(EVIDENCE_FILE)) {
+    fs.writeFileSync(EVIDENCE_FILE, JSON.stringify(SEED_EVIDENCE, null, 2), "utf-8");
+  }
+}
+
+export function readAllEvidence(): EvidenceExhibit[] {
+  try {
+    ensureEvidenceFile();
+    const data = fs.readFileSync(EVIDENCE_FILE, "utf-8");
+    return JSON.parse(data);
+  } catch (err) {
+    console.error("[EvidenceService] Error reading evidence file:", err);
+    return SEED_EVIDENCE;
+  }
+}
+
+export function saveAllEvidence(items: EvidenceExhibit[]): void {
+  ensureEvidenceFile();
+  fs.writeFileSync(EVIDENCE_FILE, JSON.stringify(items, null, 2), "utf-8");
+}
+
+export async function getEvidenceForCase(caseIdOrInvId: string): Promise<EvidenceExhibit[]> {
+  const all = readAllEvidence();
+  const norm = caseIdOrInvId.toLowerCase().trim();
+
+  // If sahil khan case
+  if (
+    norm === "case-2025-004" ||
+    norm === "inv-2025-004" ||
+    norm === "inv-004" ||
+    norm === "inv-004-sahil-khan" ||
+    norm.includes("2025-004") ||
+    norm.includes("sahil")
+  ) {
+    return all.filter((ev) => ev.relatedCase === "CASE-2025-004" || ev.relatedCase === "INV-2025-004");
+  }
+
+  // Otherwise filter by caseId
+  const matches = all.filter(
+    (ev) =>
+      ev.relatedCase.toLowerCase() === norm ||
+      ev.id.toLowerCase().includes(norm)
+  );
+  if (matches.length > 0) return matches;
+
+  // Fallback to all if not matched
+  return all;
+}
+
+export async function createEvidenceItem(
+  payload: Omit<EvidenceExhibit, "id" | "createdAt">
+): Promise<EvidenceExhibit> {
+  const all = readAllEvidence();
+  const id = `EVD-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+  const newItem: EvidenceExhibit = {
+    ...payload,
+    id,
+    createdAt: new Date().toISOString(),
+  };
+
+  all.unshift(newItem);
+  saveAllEvidence(all);
+  return newItem;
+}
